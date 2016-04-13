@@ -1,0 +1,45 @@
+#N canvas 411 84 591 443 10;
+#X obj 113 371 system;
+#X obj 182 257 r RASPI-ip;
+#X obj 113 301 list prepend;
+#X msg 113 238 killall pofStandaloneArgs;
+#X obj 113 347 list trim;
+#X msg 182 278 nohup ssh pi@\$1;
+#X obj 113 324 list append &;
+#X obj 68 79 symbol;
+#X obj 68 128 s RASPI-ip;
+#X msg 159 43 127.0.0.1;
+#X symbolatom 68 103 15 0 0 0 - - -, f 15;
+#X obj 68 17 loadbang;
+#X msg 68 44 192.168.1.71;
+#X obj 422 323 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 419 347 TALK _all_ Lyre setY \$1;
+#X obj 239 326 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 237 348 TALK _all_ Lyre setX \$1;
+#X obj 474 152 route Lyre;
+#X obj 474 176 route X Y;
+#X obj 474 127 r \$1-fromserver;
+#X obj 341 380 s \$1-toserver;
+#X obj 227 419 Lyre/motorlimit2 0.05 0.005 0.08 0.04;
+#X msg 78 182 /home/pi/Documents/OF/of_v0.9.3_linuxarmv6l_release/apps/myApps/pofStandaloneArgs/bin/pofStandaloneArgs
+-hidecursor -open /home/pi/Documents/KOF/kof/slave_quad_pi.pd;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 0 0;
+#X connect 5 0 2 1;
+#X connect 6 0 4 0;
+#X connect 7 0 10 0;
+#X connect 9 0 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 12 0;
+#X connect 12 0 7 0;
+#X connect 13 0 14 0;
+#X connect 14 0 20 0;
+#X connect 15 0 16 0;
+#X connect 16 0 20 0;
+#X connect 17 0 18 0;
+#X connect 19 0 17 0;
+#X connect 22 0 2 0;
