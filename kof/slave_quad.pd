@@ -1,4 +1,4 @@
-#N canvas 471 135 734 606 10;
+#N canvas 702 160 734 606 10;
 #X obj 83 -2 pofhead;
 #X obj 83 20 t a a;
 #X obj 83 42 s /pofhead/slave;
@@ -31,9 +31,9 @@
 #X obj 460 99 pipe 2000;
 #X obj 460 77 r /init/delayed;
 #X obj 229 318 vsl 15 60 -50 90 0 0 /slave_quad/base_rot/pitch /slave_quad/base_rot/pitch
-pitch -10 -9 0 10 -262144 -1 -1 2400 0;
+pitch -10 -9 0 10 -262144 -1 -1 938 0;
 #X obj 275 318 vsl 15 60 -180 180 0 0 /slave_quad/base_rot/yaw /slave_quad/base_rot/yaw
-yaw -10 -9 0 10 -262144 -1 -1 0 0;
+yaw -10 -9 0 10 -262144 -1 -1 3572 0;
 #X text 162 333 base;
 #X text 157 351 rotation;
 #X obj 251 341 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -44,17 +44,17 @@ yaw -10 -9 0 10 -262144 -1 -1 0 0;
 #X obj 216 192 oscparse;
 #X obj 296 206 s /osc/\$1/in;
 #X obj 387 209 print;
-#X obj 331 127 PdClient \$0 E1;
 #X obj 296 181 r \$0-fromserver;
 #X obj 131 174 pofrotate y;
+#X obj 331 127 ../PdClient \$0 E1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 12 0;
-#X connect 3 0 43 0;
+#X connect 3 0 42 0;
 #X connect 4 0 3 1;
-#X connect 5 0 43 1;
+#X connect 5 0 42 1;
 #X connect 6 0 3 1;
-#X connect 7 0 43 1;
+#X connect 7 0 42 1;
 #X connect 15 0 23 0;
 #X connect 16 0 17 0;
 #X connect 18 0 20 0;
@@ -70,5 +70,5 @@ yaw -10 -9 0 10 -262144 -1 -1 0 0;
 #X connect 34 0 35 0;
 #X connect 35 0 30 0;
 #X connect 35 0 31 0;
-#X connect 42 0 39 0;
+#X connect 41 0 39 0;
 #X coords 0 -1 1 1 500 300 1 100 300;
