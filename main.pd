@@ -1,4 +1,4 @@
-#N canvas 878 110 729 713 10;
+#N canvas 669 84 729 713 10;
 #X declare -lib pof;
 #X declare -path ./kollabs;
 #X declare -path ./kof;
@@ -29,6 +29,10 @@
 #X obj 585 147 #kof_win;
 #X obj 62 66 declare -path ./kof;
 #X msg 484 206 \; /ds/0/loadfile ../presets/preset-test;
+#X obj 388 604 PdServeur \$0 424242;
+#X obj 386 539 r /osc/0/out;
+#X obj 386 580 s \$0-toclients;
+#X obj 386 560 list prepend _all_;
 #X connect 6 0 7 0;
 #X connect 10 0 11 0;
 #X connect 10 1 14 0;
@@ -39,3 +43,5 @@
 #X connect 18 0 17 0;
 #X connect 19 0 17 0;
 #X connect 22 0 26 0;
+#X connect 28 0 30 0;
+#X connect 30 0 29 0;
