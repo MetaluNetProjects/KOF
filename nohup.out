@@ -1,1 +1,504 @@
 priority 8 scheduling failed.
+[notice ] ofAppEGLWindow: setupRPiNativeWindow(): screenRect: 1024x768
+[notice ] ofAppEGLWindow: setupRPiNativeWindow(): windowRect: 400x600
+[notice ] ofAppEGLWindow: createSurface(): setting up EGL Display
+[notice ] ofAppEGLWindow: createSurface(): EGL Display correctly set 0x1
+[notice ] ofAppEGLWindow: createSurface(): no current renderer selected
+[notice ] ofAppEGLWindow: createSurface(): default renderer detected
+[notice ] ofAppEGLWindow: createSurface(): surface created correctly
+[notice ] ofAppEGLWindow: createSurface(): API bound correctly
+[notice ] ofAppEGLWindow: createSurface(): -----EGL-----
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION_MAJOR = 1
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION_MINOR = 4
+[notice ] ofAppEGLWindow: createSurface(): EGL_CLIENT_APIS = OpenGL_ES OpenVG
+[notice ] ofAppEGLWindow: createSurface(): EGL_VENDOR = Broadcom
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION = 1.4
+[notice ] ofAppEGLWindow: createSurface(): EGL_EXTENSIONS = EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_vg_parent_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_lock_surface 
+[notice ] ofAppEGLWindow: createSurface(): GL_RENDERER = VideoCore IV HW
+[notice ] ofAppEGLWindow: createSurface(): GL_VERSION  = OpenGL ES-CM 1.1
+[notice ] ofAppEGLWindow: createSurface(): GL_VENDOR   = Broadcom
+[notice ] ofAppEGLWindow: createSurface(): -------------
+[notice ] ofAppEGLWindow: setupPeripherals(): peripheral setup complete
+[notice ] ofAppEGLWindow: setupNativeUDev(): created udev object
+[notice ] ofAppEGLWindow: setupMouse(): unabled to find mouse
+[ error ] ofAppEGLWindow: setupMouse(): did not open mouse
+[ error ] ofAppEGLWindow: setupMouse(): did not open mouse, mouse_fd < 0
+[warning] ofAppEGLWindow: setupKeyboard(): unabled to find keyboard
+[ error ] ofAppEGLWindow: setupKeyboard(): did not open keyboard
+[notice ] ofAppEGLWindow: setupPeripherals(): native event setup complete
+[ error ] ofAppEGLWindow: setupKeyboard(): did not open keyboard, keyboard_fd < 0
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+jack server is not running or cannot be started
+
+RtApiAlsa::getDeviceInfo: snd_pcm_open error for device (default), No such file or directory.
+
+
+RtApiAlsa: dump hardware params just after device open:
+
+ACCESS:  MMAP_INTERLEAVED RW_INTERLEAVED
+FORMAT:  U8 S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: [8 16]
+FRAME_BITS: [8 32]
+CHANNELS: [1 2]
+RATE: [8000 48000]
+PERIOD_TIME: (5333 8192000]
+PERIOD_SIZE: [256 65536]
+PERIOD_BYTES: [1024 131072]
+PERIODS: [1 128]
+BUFFER_TIME: (5333 8192000]
+BUFFER_SIZE: [256 65536]
+BUFFER_BYTES: [1024 65536]
+TICK_TIME: ALL
+
+RtApiAlsa: dump hardware params after installation:
+
+ACCESS:  RW_INTERLEAVED
+FORMAT:  S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: 16
+FRAME_BITS: 32
+CHANNELS: 2
+RATE: 44100
+PERIOD_TIME: (23219 23220)
+PERIOD_SIZE: 1024
+PERIOD_BYTES: 4096
+PERIODS: 3
+BUFFER_TIME: (69659 69660)
+BUFFER_SIZE: 3072
+BUFFER_BYTES: 12288
+TICK_TIME: 0
+
+RtApiAlsa: dump software params after installation:
+
+tstamp_mode: NONE
+period_step: 1
+avail_min: 1024
+start_threshold: 1024
+stop_threshold: -1
+silence_threshold: 0
+silence_size: 1610612736
+boundary: 1610612736
+[notice ] ofAppEGLWindow: destroyNativeKeyboard()
+[notice ] ofAppEGLWindow: destroyNativeKeyboard(): unable to reset terminal
+[notice ] ofAppEGLWindow: destroySurface(): destroying EGL surface
+[notice ] ofAppEGLWindow: display(): eglSwapBuffers failed: invalid display specified
+[notice ] ofAppEGLWindow: setupRPiNativeWindow(): screenRect: 1024x768
+[notice ] ofAppEGLWindow: setupRPiNativeWindow(): windowRect: 400x600
+[notice ] ofAppEGLWindow: createSurface(): setting up EGL Display
+[notice ] ofAppEGLWindow: createSurface(): EGL Display correctly set 0x1
+[notice ] ofAppEGLWindow: createSurface(): no current renderer selected
+[notice ] ofAppEGLWindow: createSurface(): default renderer detected
+[notice ] ofAppEGLWindow: createSurface(): surface created correctly
+[notice ] ofAppEGLWindow: createSurface(): API bound correctly
+[notice ] ofAppEGLWindow: createSurface(): -----EGL-----
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION_MAJOR = 1
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION_MINOR = 4
+[notice ] ofAppEGLWindow: createSurface(): EGL_CLIENT_APIS = OpenGL_ES OpenVG
+[notice ] ofAppEGLWindow: createSurface(): EGL_VENDOR = Broadcom
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION = 1.4
+[notice ] ofAppEGLWindow: createSurface(): EGL_EXTENSIONS = EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_vg_parent_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_lock_surface 
+[notice ] ofAppEGLWindow: createSurface(): GL_RENDERER = VideoCore IV HW
+[notice ] ofAppEGLWindow: createSurface(): GL_VERSION  = OpenGL ES-CM 1.1
+[notice ] ofAppEGLWindow: createSurface(): GL_VENDOR   = Broadcom
+[notice ] ofAppEGLWindow: createSurface(): -------------
+[notice ] ofAppEGLWindow: setupPeripherals(): peripheral setup complete
+[notice ] ofAppEGLWindow: setupNativeUDev(): created udev object
+[notice ] ofAppEGLWindow: setupMouse(): unabled to find mouse
+[ error [warning] ofAppEGLWindow: setupKeyboard(): unabled to find keyboard
+[notice ] ofAppEGLWindow: setupPeripherals(): native event setup complete
+] ofAppEGLWindow: setupMouse(): did not open mouse
+[ error ] ofAppEGLWindow: setupMouse(): did not open mouse, mouse_fd < 0
+[ error ] ofAppEGLWindow: setupKeyboard(): did not open keyboard
+[ error ] ofAppEGLWindow: setupKeyboard(): did not open keyboard, keyboard_fd < 0
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+jack server is not running or cannot be started
+
+RtApiAlsa::getDeviceInfo: snd_pcm_open error for device (default), No such file or directory.
+
+
+RtApiAlsa: dump hardware params just after device open:
+
+ACCESS:  MMAP_INTERLEAVED RW_INTERLEAVED
+FORMAT:  U8 S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: [8 16]
+FRAME_BITS: [8 32]
+CHANNELS: [1 2]
+RATE: [8000 48000]
+PERIOD_TIME: (5333 8192000]
+PERIOD_SIZE: [256 65536]
+PERIOD_BYTES: [1024 131072]
+PERIODS: [1 128]
+BUFFER_TIME: (5333 8192000]
+BUFFER_SIZE: [256 65536]
+BUFFER_BYTES: [1024 65536]
+TICK_TIME: ALL
+
+RtApiAlsa: dump hardware params after installation:
+
+ACCESS:  RW_INTERLEAVED
+FORMAT:  S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: 16
+FRAME_BITS: 32
+CHANNELS: 2
+RATE: 44100
+PERIOD_TIME: (23219 23220)
+PERIOD_SIZE: 1024
+PERIOD_BYTES: 4096
+PERIODS: 3
+BUFFER_TIME: (69659 69660)
+BUFFER_SIZE: 3072
+BUFFER_BYTES: 12288
+TICK_TIME: 0
+
+RtApiAlsa: dump software params after installation:
+
+tstamp_mode: NONE
+period_step: 1
+avail_min: 1024
+start_threshold: 1024
+stop_threshold: -1
+silence_threshold: 0
+silence_size: 1610612736
+boundary: 1610612736
+[notice ] ofAppEGLWindow: destroyNativeKeyboard()
+[notice ] ofAppEGLWindow: destroyNativeKeyboard(): unable to reset terminal
+[notice ] ofAppEGLWindow: destroySurface(): destroying EGL surface
+[notice ] ofAppEGLWindow: display(): eglSwapBuffers failed: invalid display specified
+[notice ] ofAppEGLWindow: setupRPiNativeWindow(): screenRect: 1024x768
+[notice ] ofAppEGLWindow: setupRPiNativeWindow(): windowRect: 400x600
+[notice ] ofAppEGLWindow: createSurface(): setting up EGL Display
+[notice ] ofAppEGLWindow: createSurface(): EGL Display correctly set 0x1
+[notice ] ofAppEGLWindow: createSurface(): no current renderer selected
+[notice ] ofAppEGLWindow: createSurface(): default renderer detected
+[notice ] ofAppEGLWindow: createSurface(): surface created correctly
+[notice ] ofAppEGLWindow: createSurface(): API bound correctly
+[notice ] ofAppEGLWindow: createSurface(): -----EGL-----
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION_MAJOR = 1
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION_MINOR = 4
+[notice ] ofAppEGLWindow: createSurface(): EGL_CLIENT_APIS = OpenGL_ES OpenVG
+[notice ] ofAppEGLWindow: createSurface(): EGL_VENDOR = Broadcom
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION = 1.4
+[notice ] ofAppEGLWindow: createSurface(): EGL_EXTENSIONS = EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_vg_parent_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_lock_surface 
+[notice ] ofAppEGLWindow: createSurface(): GL_RENDERER = VideoCore IV HW
+[notice ] ofAppEGLWindow: createSurface(): GL_VERSION  = OpenGL ES-CM 1.1
+[notice ] ofAppEGLWindow: createSurface(): GL_VENDOR   = Broadcom
+[notice ] ofAppEGLWindow: createSurface(): -------------
+[notice ] ofAppEGLWindow: setupPeripherals(): peripheral setup complete
+[notice ] ofAppEGLWindow: setupNativeUDev(): created udev object
+[notice ] ofAppEGLWindow: setupMouse(): unabled to find mouse
+[ error ] ofAppEGLWindow: setupMouse(): did not open mouse
+[ error ] ofAppEGLWindow: setupMouse(): did not open mouse, mouse_fd < 0
+[warning] ofAppEGLWindow: setupKeyboard(): unabled to find keyboard
+[ error ] ofAppEGLWindow: setupKeyboard(): did not open keyboard
+[ error ] ofAppEGLWindow: setupKeyboard(): did not open keyboard, keyboard_fd < 0
+[notice ] ofAppEGLWindow: setupPeripherals(): native event setup complete
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+jack server is not running or cannot be started
+
+RtApiAlsa::getDeviceInfo: snd_pcm_open error for device (default), No such file or directory.
+
+
+RtApiAlsa: dump hardware params just after device open:
+
+ACCESS:  MMAP_INTERLEAVED RW_INTERLEAVED
+FORMAT:  U8 S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: [8 16]
+FRAME_BITS: [8 32]
+CHANNELS: [1 2]
+RATE: [8000 48000]
+PERIOD_TIME: (5333 8192000]
+PERIOD_SIZE: [256 65536]
+PERIOD_BYTES: [1024 131072]
+PERIODS: [1 128]
+BUFFER_TIME: (5333 8192000]
+BUFFER_SIZE: [256 65536]
+BUFFER_BYTES: [1024 65536]
+TICK_TIME: ALL
+
+RtApiAlsa: dump hardware params after installation:
+
+ACCESS:  RW_INTERLEAVED
+FORMAT:  S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: 16
+FRAME_BITS: 32
+CHANNELS: 2
+RATE: 44100
+PERIOD_TIME: (23219 23220)
+PERIOD_SIZE: 1024
+PERIOD_BYTES: 4096
+PERIODS: 3
+BUFFER_TIME: (69659 69660)
+BUFFER_SIZE: 3072
+BUFFER_BYTES: 12288
+TICK_TIME: 0
+
+RtApiAlsa: dump software params after installation:
+
+tstamp_mode: NONE
+period_step: 1
+avail_min: 1024
+start_threshold: 1024
+stop_threshold: -1
+silence_threshold: 0
+silence_size: 1610612736
+boundary: 1610612736
+[notice ] ofAppEGLWindow: destroyNativeKeyboard()
+[notice ] ofAppEGLWindow: destroyNativeKeyboard(): unable to reset terminal
+[notice ] ofAppEGLWindow: destroySurface(): destroying EGL surface
+[notice ] ofAppEGLWindow: display(): eglSwapBuffers failed: invalid display specified
+[notice ] ofAppEGLWindow: setupRPiNativeWindow(): screenRect: 1024x768
+[notice ] ofAppEGLWindow: setupRPiNativeWindow(): windowRect: 400x600
+[notice ] ofAppEGLWindow: createSurface(): setting up EGL Display
+[notice ] ofAppEGLWindow: createSurface(): EGL Display correctly set 0x1
+[notice ] ofAppEGLWindow: createSurface(): no current renderer selected
+[notice ] ofAppEGLWindow: createSurface(): default renderer detected
+[notice ] ofAppEGLWindow: createSurface(): surface created correctly
+[notice ] ofAppEGLWindow: createSurface(): API bound correctly
+[notice ] ofAppEGLWindow: createSurface(): -----EGL-----
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION_MAJOR = 1
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION_MINOR = 4
+[notice ] ofAppEGLWindow: createSurface(): EGL_CLIENT_APIS = OpenGL_ES OpenVG
+[notice ] ofAppEGLWindow: createSurface(): EGL_VENDOR = Broadcom
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION = 1.4
+[notice ] ofAppEGLWindow: createSurface(): EGL_EXTENSIONS = EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_vg_parent_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_lock_surface 
+[notice ] ofAppEGLWindow: createSurface(): GL_RENDERER = VideoCore IV HW
+[notice ] ofAppEGLWindow: createSurface(): GL_VERSION  = OpenGL ES-CM 1.1
+[notice ] ofAppEGLWindow: createSurface(): GL_VENDOR   = Broadcom
+[notice ] ofAppEGLWindow: createSurface(): -------------
+[notice ] ofAppEGLWindow: setupPeripherals(): peripheral setup complete
+[notice ] ofAppEGLWindow: setupNativeUDev(): created udev object
+[notice ] ofAppEGLWindow: setupMouse(): unabled to find mouse
+[ error ] ofAppEGLWindow: setupMouse(): did not open mouse
+[ error ] ofAppEGLWindow: setupMouse(): did not open mouse, mouse_fd < 0[warning] ofAppEGLWindow: setupKeyboard(): unabled to find keyboard
+
+[ error ] ofAppEGLWindow: setupKeyboard(): did not open keyboard
+[ error ] ofAppEGLWindow: setupKeyboard(): did not open keyboard, keyboard_fd < 0
+[notice ] ofAppEGLWindow: setupPeripherals(): native event setup complete
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+jack server is not running or cannot be started
+
+RtApiAlsa::getDeviceInfo: snd_pcm_open error for device (default), No such file or directory.
+
+
+RtApiAlsa: dump hardware params just after device open:
+
+ACCESS:  MMAP_INTERLEAVED RW_INTERLEAVED
+FORMAT:  U8 S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: [8 16]
+FRAME_BITS: [8 32]
+CHANNELS: [1 2]
+RATE: [8000 48000]
+PERIOD_TIME: (5333 8192000]
+PERIOD_SIZE: [256 65536]
+PERIOD_BYTES: [1024 131072]
+PERIODS: [1 128]
+BUFFER_TIME: (5333 8192000]
+BUFFER_SIZE: [256 65536]
+BUFFER_BYTES: [1024 65536]
+TICK_TIME: ALL
+
+RtApiAlsa: dump hardware params after installation:
+
+ACCESS:  RW_INTERLEAVED
+FORMAT:  S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: 16
+FRAME_BITS: 32
+CHANNELS: 2
+RATE: 44100
+PERIOD_TIME: (23219 23220)
+PERIOD_SIZE: 1024
+PERIOD_BYTES: 4096
+PERIODS: 3
+BUFFER_TIME: (69659 69660)
+BUFFER_SIZE: 3072
+BUFFER_BYTES: 12288
+TICK_TIME: 0
+
+RtApiAlsa: dump software params after installation:
+
+tstamp_mode: NONE
+period_step: 1
+avail_min: 1024
+start_threshold: 1024
+stop_threshold: -1
+silence_threshold: 0
+silence_size: 1610612736
+boundary: 1610612736
+[notice ] ofAppEGLWindow: destroyNativeKeyboard()
+[notice ] ofAppEGLWindow: destroyNativeKeyboard(): unable to reset terminal
+[notice ] ofAppEGLWindow: destroySurface(): destroying EGL surface
+[notice ] ofAppEGLWindow: display(): eglSwapBuffers failed: invalid display specified
+[notice ] ofAppEGLWindow: setupRPiNativeWindow(): screenRect: 1024x768
+[notice ] ofAppEGLWindow: setupRPiNativeWindow(): windowRect: 400x600
+[notice ] ofAppEGLWindow: createSurface(): setting up EGL Display
+[notice ] ofAppEGLWindow: createSurface(): EGL Display correctly set 0x1
+[notice ] ofAppEGLWindow: createSurface(): no current renderer selected
+[notice ] ofAppEGLWindow: createSurface(): default renderer detected
+[notice ] ofAppEGLWindow: createSurface(): surface created correctly
+[notice ] ofAppEGLWindow: createSurface(): API bound correctly
+[notice ] ofAppEGLWindow: createSurface(): -----EGL-----
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION_MAJOR = 1
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION_MINOR = 4
+[notice ] ofAppEGLWindow: createSurface(): EGL_CLIENT_APIS = OpenGL_ES OpenVG
+[notice ] ofAppEGLWindow: createSurface(): EGL_VENDOR = Broadcom
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION = 1.4
+[notice ] ofAppEGLWindow: createSurface(): EGL_EXTENSIONS = EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_vg_parent_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_lock_surface 
+[notice ] ofAppEGLWindow: createSurface(): GL_RENDERER = VideoCore IV HW
+[notice ] ofAppEGLWindow: createSurface(): GL_VERSION  = OpenGL ES-CM 1.1
+[notice ] ofAppEGLWindow: createSurface(): GL_VENDOR   = Broadcom
+[notice ] ofAppEGLWindow: createSurface(): -------------
+[notice ] ofAppEGLWindow: setupPeripherals(): peripheral setup complete
+[notice ] ofAppEGLWindow: setupNativeUDev(): created udev object
+[notice ] ofAppEGLWindow: setupMouse(): unabled to find mouse
+[ error ] ofAppEGLWindow: setupMouse(): did not open mouse
+[ error ] ofAppEGLWindow: setupMouse(): did not open mouse, mouse_fd < 0
+[warning] ofAppEGLWindow: setupKeyboard(): unabled to find keyboard
+[notice ] ofAppEGLWindow: setupPeripherals(): native event setup complete
+[ error ] ofAppEGLWindow: setupKeyboard(): did not open keyboard
+[ error ] ofAppEGLWindow: setupKeyboard(): did not open keyboard, keyboard_fd < 0
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+jack server is not running or cannot be started
+
+RtApiAlsa::getDeviceInfo: snd_pcm_open error for device (default), No such file or directory.
+
+
+RtApiAlsa: dump hardware params just after device open:
+
+ACCESS:  MMAP_INTERLEAVED RW_INTERLEAVED
+FORMAT:  U8 S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: [8 16]
+FRAME_BITS: [8 32]
+CHANNELS: [1 2]
+RATE: [8000 48000]
+PERIOD_TIME: (5333 8192000]
+PERIOD_SIZE: [256 65536]
+PERIOD_BYTES: [1024 131072]
+PERIODS: [1 128]
+BUFFER_TIME: (5333 8192000]
+BUFFER_SIZE: [256 65536]
+BUFFER_BYTES: [1024 65536]
+TICK_TIME: ALL
+
+RtApiAlsa: dump hardware params after installation:
+
+ACCESS:  RW_INTERLEAVED
+FORMAT:  S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: 16
+FRAME_BITS: 32
+CHANNELS: 2
+RATE: 44100
+PERIOD_TIME: (23219 23220)
+PERIOD_SIZE: 1024
+PERIOD_BYTES: 4096
+PERIODS: 3
+BUFFER_TIME: (69659 69660)
+BUFFER_SIZE: 3072
+BUFFER_BYTES: 12288
+TICK_TIME: 0
+
+RtApiAlsa: dump software params after installation:
+
+tstamp_mode: NONE
+period_step: 1
+avail_min: 1024
+start_threshold: 1024
+stop_threshold: -1
+silence_threshold: 0
+silence_size: 1610612736
+boundary: 1610612736
+Connection to 192.168.1.71 closed by remote host.
+[notice ] ofAppEGLWindow: setupRPiNativeWindow(): screenRect: 1024x768
+[notice ] ofAppEGLWindow: setupRPiNativeWindow(): windowRect: 400x600
+[notice ] ofAppEGLWindow: createSurface(): setting up EGL Display
+[notice ] ofAppEGLWindow: createSurface(): EGL Display correctly set 0x1
+[notice ] ofAppEGLWindow: createSurface(): no current renderer selected
+[notice ] ofAppEGLWindow: createSurface(): default renderer detected
+[notice ] ofAppEGLWindow: createSurface(): surface created correctly
+[notice ] ofAppEGLWindow: createSurface(): API bound correctly
+[notice ] ofAppEGLWindow: createSurface(): -----EGL-----
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION_MAJOR = 1
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION_MINOR = 4
+[notice ] ofAppEGLWindow: createSurface(): EGL_CLIENT_APIS = OpenGL_ES OpenVG
+[notice ] ofAppEGLWindow: createSurface(): EGL_VENDOR = Broadcom
+[notice ] ofAppEGLWindow: createSurface(): EGL_VERSION = 1.4
+[notice ] ofAppEGLWindow: createSurface(): EGL_EXTENSIONS = EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_vg_parent_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_lock_surface 
+[notice ] ofAppEGLWindow: createSurface(): GL_RENDERER = VideoCore IV HW
+[notice ] ofAppEGLWindow: createSurface(): GL_VERSION  = OpenGL ES-CM 1.1
+[notice ] ofAppEGLWindow: createSurface(): GL_VENDOR   = Broadcom
+[notice ] ofAppEGLWindow: createSurface(): -------------
+[notice ] ofAppEGLWindow: setupPeripherals(): peripheral setup complete
+[notice ] ofAppEGLWindow: setupNativeUDev(): created udev object
+[notice ] ofAppEGLWindow: setupMouse(): unabled to find mouse
+[ error ] ofAppEGLWindow: setupMouse(): did not open mouse
+[ error ] ofAppEGLWindow: setupMouse(): did not open mouse, mouse_fd < 0
+[warning] ofAppEGLWindow: setupKeyboard(): unabled to find keyboard
+[notice ] ofAppEGLWindow: setupPeripherals(): native event setup complete
+[ error ] ofAppEGLWindow: setupKeyboard(): did not open keyboard
+[ error ] ofAppEGLWindow: setupKeyboard(): did not open keyboard, keyboard_fd < 0
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+jack server is not running or cannot be started
+
+RtApiAlsa::getDeviceInfo: snd_pcm_open error for device (default), No such file or directory.
+
+
+RtApiAlsa: dump hardware params just after device open:
+
+ACCESS:  MMAP_INTERLEAVED RW_INTERLEAVED
+FORMAT:  U8 S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: [8 16]
+FRAME_BITS: [8 32]
+CHANNELS: [1 2]
+RATE: [8000 48000]
+PERIOD_TIME: (5333 8192000]
+PERIOD_SIZE: [256 65536]
+PERIOD_BYTES: [1024 131072]
+PERIODS: [1 128]
+BUFFER_TIME: (5333 8192000]
+BUFFER_SIZE: [256 65536]
+BUFFER_BYTES: [1024 65536]
+TICK_TIME: ALL
+
+RtApiAlsa: dump hardware params after installation:
+
+ACCESS:  RW_INTERLEAVED
+FORMAT:  S16_LE
+SUBFORMAT:  STD
+SAMPLE_BITS: 16
+FRAME_BITS: 32
+CHANNELS: 2
+RATE: 44100
+PERIOD_TIME: (23219 23220)
+PERIOD_SIZE: 1024
+PERIOD_BYTES: 4096
+PERIODS: 3
+BUFFER_TIME: (69659 69660)
+BUFFER_SIZE: 3072
+BUFFER_BYTES: 12288
+TICK_TIME: 0
+
+RtApiAlsa: dump software params after installation:
+
+tstamp_mode: NONE
+period_step: 1
+avail_min: 1024
+start_threshold: 1024
+stop_threshold: -1
+silence_threshold: 0
+silence_size: 1610612736
+boundary: 1610612736

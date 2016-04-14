@@ -1,12 +1,5 @@
-#N canvas 148 269 965 587 10;
-#N canvas 80 575 768 272 storage_&_osc 0;
-#X obj 369 11 osc_r \$2 /kofwin/window/x;
-#X obj 369 31 osc_r \$2 /kofwin/window/y;
-#X obj 369 51 osc_r \$2 /kofwin/normalizedtexcoords;
-#X obj 369 71 osc_r \$2 /kofwin/framerate;
-#X obj 369 91 osc_r \$2 /kofwin/cursor;
-#X obj 369 111 osc_r \$2 /kofwin/position/x;
-#X obj 369 131 osc_r \$2 /kofwin/position/y;
+#N canvas 4 75 965 587 10;
+#N canvas 279 166 768 272 storage_&_osc 0;
 #X obj 41 13 ds_reg \$2 /kofwin/window/x;
 #X obj 41 32 ds_reg \$2 /kofwin/window/y;
 #X obj 39 51 ds_reg \$2 /kofwin/normalizedtexcoords;
@@ -14,12 +7,20 @@
 #X obj 40 92 ds_reg \$2 /kofwin/cursor;
 #X obj 39 109 ds_reg \$2 /kofwin/position/x;
 #X obj 40 134 ds_reg \$2 /kofwin/position/y;
-#X restore 246 84 pd storage_&_osc;
+#X obj 369 10 osc_r \$1 /kofwin/window/x;
+#X obj 369 31 osc_r \$1 /kofwin/window/y;
+#X obj 370 51 osc_r \$1 /kofwin/normalizedtexcoords;
+#X obj 369 71 osc_r \$1 /kofwin/framerate;
+#X obj 369 91 osc_r \$1 /kofwin/cursor;
+#X obj 369 111 osc_r \$1 /kofwin/position/x;
+#X obj 369 130 osc_r \$1 /kofwin/position/y;
+#X obj 369 150 osc_r \$1 /kofwin/fullscreen;
+#X restore 249 84 pd storage_&_osc;
 #X obj 28 369 cnv 15 360 60 empty empty creation_arguments: 3 8 0 12
 -191407 -1 0;
 #X text 33 388 1st: module ID \, needs to be unique \; 2nd: storage
 domain;
-#N canvas 1023 580 413 151 cfg_\$1 0;
+#N canvas 1023 578 413 151 cfg_\$1 0;
 #X obj 2 2 cnv 15 170 145 empty empty QUAD 20 12 0 14 -233017 -66577
 0;
 #X obj 179 2 cnv 15 190 145 empty empty BACKGROUND 20 12 0 14 -233017
@@ -31,12 +32,12 @@ domain;
 #X obj 297 40 vsl 15 60 0 2000 0 0 /kof/\$1/fadetime /kof/\$1/fadetime
 time -10 -9 0 10 -262144 -1 -1 0 0;
 #X obj 15 38 tgl 15 0 /kofwin/normalizedtexcoords /kofwin/normalizedtexcoords
-normalizedtexcoords 17 7 0 10 -262144 -1 -1 1 1;
+normalizedtexcoords 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 15 58 tgl 15 0 /kofwin/cursor /kofwin/cursor cursor 17 7 0 10
--262144 -1 -1 1 1;
+-262144 -1 -1 0 1;
 #X coords 0 0 1 1 155 300 0;
 #X restore 312 258 pd cfg_\$1;
-#N canvas 937 245 450 300 init 1;
+#N canvas 937 245 450 300 init 0;
 #X obj 98 76 loadbang;
 #X obj 98 98 list append \$1;
 #X obj 173 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -59,7 +60,7 @@ normalizedtexcoords 17 7 0 10 -262144 -1 -1 1 1;
 #X floatatom 571 552 5 0 0 0 - - -, f 5;
 #X msg 534 183 build;
 #X msg 742 472 background 0 0 0;
-#X obj 514 21 r /kofwin/window/x;
+#X obj 514 22 r /kofwin/window/x;
 #X obj 535 41 r /kofwin/window/y;
 #X obj 535 63 t b f;
 #X obj 514 113 list prepend window;
@@ -80,17 +81,17 @@ normalizedtexcoords 17 7 0 10 -262144 -1 -1 1 1;
 #X obj 61 77 cnv 15 170 125 empty empty WINDOW 20 12 0 14 -233017 -66577
 0;
 #X obj 160 130 nbx 5 14 0 10000 0 0 /kofwin/position/x /kofwin/position/x
-x -10 7 0 10 -261234 -1 -1 100 256;
+x -10 7 0 10 -261234 -1 -1 3488 256;
 #X obj 160 146 nbx 5 14 0 10000 0 0 /kofwin/position/y /kofwin/position/y
-y -10 7 0 10 -261234 -1 -1 100 256;
+y -10 7 0 10 -261234 -1 -1 0 256;
 #X obj 80 131 nbx 5 14 0 10000 0 0 /kofwin/window/x /kofwin/window/x
-x -10 7 0 10 -261234 -1 -1 795 256;
+x -10 7 0 10 -261234 -1 -1 1024 256;
 #X obj 80 147 nbx 5 14 0 10000 0 0 /kofwin/window/y /kofwin/window/y
-y -10 7 0 10 -261234 -1 -1 594 256;
+y -10 7 0 10 -261234 -1 -1 768 256;
 #X text 86 110 size;
 #X text 156 110 position;
 #X obj 83 171 nbx 5 14 0 10000 0 0 /kofwin/framerate /kofwin/framerate
-fps -20 7 0 10 -261234 -1 -1 25 256;
+fps -20 7 0 10 -261234 -1 -1 0 256;
 #X obj 152 83 bng 15 250 50 0 empty empty advanced 17 7 0 10 -159808
 -1 -1;
 #X msg 243 112 vis 1;
@@ -99,6 +100,9 @@ fps -20 7 0 10 -261234 -1 -1 25 256;
 7 0 10 -262144 -1 -1;
 #X obj 514 91 pack f f f;
 #X obj 581 61 r /kofwin/fullscreen;
+#X obj 612 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 670 123 5 0 0 0 - - -, f 5;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
@@ -107,6 +111,7 @@ fps -20 7 0 10 -261234 -1 -1 25 256;
 #X connect 15 0 9 0;
 #X connect 16 0 46 0;
 #X connect 17 0 18 0;
+#X connect 17 0 49 0;
 #X connect 18 0 46 0;
 #X connect 18 1 46 1;
 #X connect 19 0 20 0;
@@ -129,4 +134,5 @@ fps -20 7 0 10 -261234 -1 -1 25 256;
 #X connect 43 0 44 0;
 #X connect 46 0 19 0;
 #X connect 47 0 46 2;
+#X connect 47 0 48 0;
 #X coords 0 -1 1 1 172 150 1 60 55;
