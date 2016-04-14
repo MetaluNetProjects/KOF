@@ -1,8 +1,8 @@
-#N canvas 270 426 558 446 10;
+#N canvas 268 425 558 446 10;
 #X declare -lib pof;
 #X declare -path ../kollabs;
 #X obj 16 88 s pd-slave_quad_pool;
-#N canvas 891 501 545 371 slave_quad_pool 1;
+#N canvas 596 665 545 371 slave_quad_pool 0;
 #X obj 20 20 slave_quad 1;
 #X coords 0 -1 1 1 520 320 2 10 10;
 #X restore 16 107 pd slave_quad_pool;
