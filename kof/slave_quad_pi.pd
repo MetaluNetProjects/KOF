@@ -1,2 +1,4 @@
-#N canvas 4 74 539 338 10;
+#N canvas 5 74 539 388 10;
+#X declare -path ../kollabs;
 #X obj 20 18 slave_quad PI;
+#X obj 23 331 declare -path ../kollabs;
