@@ -1,8 +1,7 @@
-#N canvas 357 150 591 443 10;
+#N canvas 171 75 591 443 10;
 #X obj 113 371 system;
 #X obj 182 257 r RASPI-ip;
 #X obj 113 301 list prepend;
-#X msg 113 238 killall pofStandaloneArgs;
 #X obj 113 347 list trim;
 #X msg 182 278 nohup ssh pi@\$1;
 #X obj 113 324 list append &;
@@ -18,14 +17,14 @@
 #X obj 239 326 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X msg 237 348 TALK _all_ Lyre setX \$1;
-#X obj 474 152 route Lyre;
-#X obj 474 176 route X Y;
-#X obj 474 127 r \$1-fromserver;
+#X obj 481 67 route Lyre;
+#X obj 481 91 route X Y;
+#X obj 481 42 r \$1-fromserver;
 #X obj 341 380 s \$1-toserver;
 #X obj 227 419 Lyre/motorlimit2 0.05 0.005 0.08 0.04;
-#X msg 78 182 /home/pi/Documents/OF/of_v0.9.3_linuxarmv6l_release/apps/myApps/pofStandaloneArgs/bin/pofStandaloneArgs
+#X msg 370 228 /home/pi/Documents/OF/of_v0.9.3_linuxarmv6l_release/apps/myApps/pofStandaloneArgs/bin/pofStandaloneArgs
 -hidecursor -open /home/pi/Documents/KOF/kof/slave_quad_pi.pd;
-#N canvas 4 75 879 377 win 0;
+#N canvas 93 149 879 503 win 0;
 #X obj 147 233 s /osc/0/out;
 #X obj 122 134 pack f \$1;
 #X obj 122 45 f \$1;
@@ -39,12 +38,32 @@
 -1;
 #X msg 297 310 /\$1 /kofwin/fullscreen 0 \, /\$1 /kofwin/position/x
 50 \, /\$1 /kofwin/position/y 50;
-#X obj 532 97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X msg 198 137 symbol PI;
-#X msg 149 183 /\$2 /kofwin/fullscreen 1 \, /\$2 /kofwin/position/x
+#X obj 392 114 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 194 139 symbol PI;
+#X msg 533 168 symbol PI;
+#X msg 533 190 /\$2 /kofwin/fullscreen 1 \, /\$2 /kofwin/position/x
 0 \, /\$2 /kofwin/position/y 0 \, /\$2 /kofwin/window/x 1024 \, /\$2
 /kofwin/window/y 768 \, /\$2 /kofwin/normalizedtexcoords 1;
+#X msg 149 183 /\$1 /kofwin/fullscreen 1 \, /\$1 /kofwin/position/x
+0 \, /\$1 /kofwin/position/y 0 \, /\$1 /kofwin/window/x 1024 \, /\$1
+/kofwin/window/y 768 \, /\$1 /kofwin/normalizedtexcoords 1;
+#X obj 194 79 inlet;
+#X obj 470 22 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 667 72 symbol PI;
+#X obj 658 95 pack s f;
+#X obj 691 24 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 691 44 t b f;
+#X msg 659 121 /\$1 /kofwin/normalizedtexcoords \$2;
+#X msg 438 119 /PI /kofwin/normalizedtexcoords \$1;
+#X msg 487 257 /PI /kofwin/fullscreen 0 \, /PI /kofwin/position/x \$1
+\, /PI /kofwin/position/y 0 \, /PI /kofwin/window/x 800 \, /PI /kofwin/window/y
+600 \, /PI /kofwin/normalizedtexcoords 1;
+#X floatatom 493 230 5 0 0 0 - - -, f 5;
+#X msg 370 389 /PI /kofwin/position/x \$1;
+#X floatatom 368 373 5 0 0 0 - - -, f 5;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
@@ -55,24 +74,44 @@
 #X connect 9 0 2 0;
 #X connect 10 0 0 0;
 #X connect 11 0 6 0;
-#X connect 12 0 13 0;
-#X connect 13 0 0 0;
-#X restore 389 78 pd win;
-#X connect 1 0 5 0;
-#X connect 2 0 6 0;
-#X connect 3 0 2 0;
-#X connect 4 0 0 0;
-#X connect 5 0 2 1;
-#X connect 6 0 4 0;
-#X connect 7 0 10 0;
-#X connect 9 0 7 0;
-#X connect 10 0 8 0;
-#X connect 11 0 12 0;
-#X connect 12 0 7 0;
+#X connect 12 0 15 0;
 #X connect 13 0 14 0;
-#X connect 14 0 20 0;
-#X connect 15 0 16 0;
-#X connect 16 0 20 0;
-#X connect 17 0 18 0;
-#X connect 19 0 17 0;
-#X connect 22 0 2 0;
+#X connect 15 0 0 0;
+#X connect 16 0 12 0;
+#X connect 17 0 23 0;
+#X connect 18 0 19 0;
+#X connect 19 0 22 0;
+#X connect 20 0 21 0;
+#X connect 21 0 18 0;
+#X connect 21 1 19 1;
+#X connect 23 0 0 0;
+#X connect 24 0 0 0;
+#X connect 25 0 24 0;
+#X connect 26 0 0 0;
+#X connect 27 0 26 0;
+#X restore 389 78 pd win;
+#X obj 388 60 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 374 268 killall pofStandaloneArgs;
+#X msg 60 184 /home/pi/Documents/OF/of_v0.9.3_linuxarmv6l_release/addons/ofxPof/exampleStandalone/bin/exampleStandalone
+-hidecursor -open /home/pi/Documents/KOF/kof/slave_quad_pi.pd;
+#X msg 113 238 killall exampleStandalone;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 0;
+#X connect 4 0 2 1;
+#X connect 5 0 3 0;
+#X connect 6 0 9 0;
+#X connect 8 0 6 0;
+#X connect 9 0 7 0;
+#X connect 10 0 11 0;
+#X connect 11 0 6 0;
+#X connect 12 0 13 0;
+#X connect 13 0 19 0;
+#X connect 14 0 15 0;
+#X connect 15 0 19 0;
+#X connect 16 0 17 0;
+#X connect 18 0 16 0;
+#X connect 23 0 22 0;
+#X connect 25 0 2 0;
+#X connect 26 0 2 0;
