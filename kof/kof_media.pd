@@ -1,4 +1,4 @@
-#N canvas 471 210 965 433 10;
+#N canvas 469 209 965 433 10;
 #X obj 61 72 cnv 15 198 31 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 65 76 tgl 15 1 /kof/\$1/state /kof/\$1/state on/off 17 7 0 10
@@ -89,21 +89,21 @@ domain;
 #X obj 2 2 cnv 15 170 145 empty empty QUAD 20 12 0 14 -233017 -66577
 0;
 #X obj 21 92 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/left/x /kof/\$1/corner/top/left/x
-x -10 7 0 10 -261234 -1 -1 -195 256;
+x -10 7 0 10 -261234 -1 -1 -200 256;
 #X obj 21 108 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/left/y
-/kof/\$1/corner/top/left/y y -10 7 0 10 -261234 -1 -1 1 256;
+/kof/\$1/corner/top/left/y y -10 7 0 10 -261234 -1 -1 200 256;
 #X obj 98 92 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/right/x
-/kof/\$1/corner/top/right/x x -10 7 0 10 -261234 -1 -1 55 256;
+/kof/\$1/corner/top/right/x x -10 7 0 10 -261234 -1 -1 200 256;
 #X obj 98 108 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/right/y
-/kof/\$1/corner/top/right/y y -10 7 0 10 -261234 -1 -1 145 256;
+/kof/\$1/corner/top/right/y y -10 7 0 10 -261234 -1 -1 200 256;
 #X obj 21 56 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/left/x
-/kof/\$1/corner/bottom/left/x x -10 7 0 10 -261234 -1 -1 -262 256;
+/kof/\$1/corner/bottom/left/x x -10 7 0 10 -261234 -1 -1 -200 256;
 #X obj 21 72 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/left/y
-/kof/\$1/corner/bottom/left/y y -10 7 0 10 -261234 -1 -1 -229 256;
+/kof/\$1/corner/bottom/left/y y -10 7 0 10 -261234 -1 -1 -200 256;
 #X obj 98 56 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/right/x
-/kof/\$1/corner/bottom/right/x x -10 7 0 10 -261234 -1 -1 178 256;
+/kof/\$1/corner/bottom/right/x x -10 7 0 10 -261234 -1 -1 200 256;
 #X obj 98 72 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/right/y
-/kof/\$1/corner/bottom/right/y y -10 7 0 10 -261234 -1 -1 -123 256
+/kof/\$1/corner/bottom/right/y y -10 7 0 10 -261234 -1 -1 -200 256
 ;
 #X text 14 32 corners position;
 #X obj 179 2 cnv 15 190 145 empty empty MEDIA&MIX 20 12 0 14 -233017
@@ -113,11 +113,11 @@ x -10 7 0 10 -261234 -1 -1 -195 256;
 #X obj 268 36 bng 15 250 50 0 /kof/\$1/media/2/openpanel empty player_2
 17 7 0 10 -262144 -1 -1;
 #X obj 197 80 vsl 15 60 0 1 0 0 /kof/\$1/alpha/1 /kof/\$1/alpha/1 alpha1
--10 -9 0 10 -262144 -1 -1 5900 0;
+-10 -9 0 10 -262144 -1 -1 2950 0;
 #X obj 247 80 vsl 15 60 0 1 0 0 /kof/\$1/alpha/2 /kof/\$1/alpha/2 alpha2
--10 -9 0 10 -262144 -1 -1 5900 0;
+-10 -9 0 10 -262144 -1 -1 2950 0;
 #X obj 297 80 vsl 15 60 0 2000 0 0 /kof/\$1/fadetime /kof/\$1/fadetime
-time -10 -9 0 10 -262144 -1 -1 3298 0;
+time -10 -9 0 10 -262144 -1 -1 0 0;
 #X obj 332 85 vradio 15 1 0 3 /kof/\$1/fademode /kof/\$1/fademode mode
 0 -8 0 10 -262144 -1 -1 2;
 #X coords 0 0 1 1 155 300 0;

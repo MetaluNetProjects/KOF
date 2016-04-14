@@ -52,7 +52,6 @@
 #X obj 705 382 route /loadpreset;
 #X obj 661 460 ds_gui 0;
 #X obj 115 389 kof_sphere SPHERE 0;
-#X obj 114 544 kof_media QUAD\$1 0;
 #X text 838 360 reception changement de scene;
 #X obj 661 440 ds_logic 0;
 #X obj 821 440 ds_transition 0;
@@ -68,6 +67,8 @@
 #X msg 953 249 \; /ds/0/reload bang;
 #X text 876 207 (re)chargement fichier preset;
 #X obj 346 227 s /osc/0/in;
+#X obj 802 82 kof_quadmask MASK;
+#X obj 114 544 kof_media QUAD\$1 0;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 48 0;
@@ -94,12 +95,12 @@
 #X connect 38 0 39 0;
 #X connect 39 0 42 0;
 #X connect 40 0 41 0;
-#X connect 40 1 64 0;
+#X connect 40 1 63 0;
 #X connect 43 0 40 0;
-#X connect 44 0 56 0;
+#X connect 44 0 55 0;
 #X connect 45 0 46 0;
+#X connect 46 0 56 0;
 #X connect 46 0 57 0;
-#X connect 46 0 58 0;
+#X connect 58 0 60 0;
 #X connect 59 0 61 0;
-#X connect 60 0 62 0;
 #X coords 0 -1 1 1 500 300 1 100 300;

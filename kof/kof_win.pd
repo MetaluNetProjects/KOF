@@ -1,5 +1,5 @@
-#N canvas 4 75 965 587 10;
-#N canvas 279 166 768 272 storage_&_osc 0;
+#N canvas 102 373 1053 726 10;
+#N canvas 277 165 768 272 storage_&_osc 0;
 #X obj 41 13 ds_reg \$2 /kofwin/window/x;
 #X obj 41 32 ds_reg \$2 /kofwin/window/y;
 #X obj 39 51 ds_reg \$2 /kofwin/normalizedtexcoords;
@@ -15,36 +15,43 @@
 #X obj 369 111 osc_r \$1 /kofwin/position/x;
 #X obj 369 130 osc_r \$1 /kofwin/position/y;
 #X obj 369 150 osc_r \$1 /kofwin/fullscreen;
+#X obj 41 183 ds_reg \$2 /kofwin/background/R;
+#X obj 369 180 osc_r \$1 /kofwin/background/R;
+#X obj 369 201 osc_r \$1 /kofwin/background/G;
+#X obj 41 202 ds_reg \$2 /kofwin/background/G;
+#X obj 39 221 ds_reg \$2 /kofwin/background/B;
+#X obj 370 221 osc_r \$1 /kofwin/background/B;
 #X restore 249 84 pd storage_&_osc;
 #X obj 28 369 cnv 15 360 60 empty empty creation_arguments: 3 8 0 12
 -191407 -1 0;
 #X text 33 388 1st: module ID \, needs to be unique \; 2nd: storage
 domain;
-#N canvas 1023 578 413 151 cfg_\$1 0;
+#N canvas 1021 577 413 151 cfg_\$1 0;
 #X obj 2 2 cnv 15 170 145 empty empty QUAD 20 12 0 14 -233017 -66577
 0;
 #X obj 179 2 cnv 15 190 145 empty empty BACKGROUND 20 12 0 14 -233017
 -66577 0;
-#X obj 197 40 vsl 15 60 0 1 0 0 /kof/\$1/alpha/1 /kof/\$1/alpha/1 alpha1
--10 -9 0 10 -262144 -1 -1 0 0;
-#X obj 247 40 vsl 15 60 0 1 0 0 /kof/\$1/alpha/2 /kof/\$1/alpha/2 alpha2
--10 -9 0 10 -262144 -1 -1 0 0;
-#X obj 297 40 vsl 15 60 0 2000 0 0 /kof/\$1/fadetime /kof/\$1/fadetime
-time -10 -9 0 10 -262144 -1 -1 0 0;
+#X obj 197 40 vsl 15 60 0 255 0 0 /kofwin/background/R /kofwin/background/R
+empty -10 -9 0 10 -258113 -1 -1 1900 0;
+#X obj 247 40 vsl 15 60 0 255 0 0 /kofwin/background/G /kofwin/background/G
+empty -10 -9 0 10 -4034 -1 -1 5900 0;
+#X obj 297 40 vsl 15 60 0 255 0 0 /kofwin/background/B /kofwin/background/B
+empty -10 -9 0 10 -4160 -1 -1 4200 0;
 #X obj 15 38 tgl 15 0 /kofwin/normalizedtexcoords /kofwin/normalizedtexcoords
-normalizedtexcoords 17 7 0 10 -262144 -1 -1 0 1;
+normalizedtexcoords 17 7 0 10 -262144 -1 -1 1 1;
 #X obj 15 58 tgl 15 0 /kofwin/cursor /kofwin/cursor cursor 17 7 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 1 1;
 #X coords 0 0 1 1 155 300 0;
 #X restore 312 258 pd cfg_\$1;
-#N canvas 937 245 450 300 init 0;
+#N canvas 935 244 450 300 init 0;
 #X obj 98 76 loadbang;
 #X obj 98 98 list append \$1;
 #X obj 173 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 98 120 \; /kofwin/window/x 800 \; /kofwin/window/y 600 \; /kofwin/normalizedtexcoords
 1 \; /kofwin/framerate 25 \; /kofwin/cursor 1 \; /kofwin/position/x
-100 \; /kofwin/position/y 100 \;;
+100 \; /kofwin/position/y 100 \; /kofwin/background/R 0 \; /kofwin/background/G
+0 \; /kofwin/background/B 0;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -53,13 +60,12 @@ normalizedtexcoords 17 7 0 10 -262144 -1 -1 0 1;
 #X text 44 466 inversion corners top/bottom;
 #X text 48 481 gestion film/image;
 #X text 48 497 liste medias Cream;
-#X obj 514 485 pofwin;
-#X obj 514 505 route window;
-#X obj 514 527 unpack f f;
-#X floatatom 514 552 5 0 0 0 - - -, f 5;
-#X floatatom 571 552 5 0 0 0 - - -, f 5;
+#X obj 514 575 pofwin;
+#X obj 514 595 route window;
+#X obj 514 617 unpack f f;
+#X floatatom 514 642 5 0 0 0 - - -, f 5;
+#X floatatom 571 642 5 0 0 0 - - -, f 5;
 #X msg 534 183 build;
-#X msg 742 472 background 0 0 0;
 #X obj 514 22 r /kofwin/window/x;
 #X obj 535 41 r /kofwin/window/y;
 #X obj 535 63 t b f;
@@ -81,17 +87,17 @@ normalizedtexcoords 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 61 77 cnv 15 170 125 empty empty WINDOW 20 12 0 14 -233017 -66577
 0;
 #X obj 160 130 nbx 5 14 0 10000 0 0 /kofwin/position/x /kofwin/position/x
-x -10 7 0 10 -261234 -1 -1 3488 256;
+x -10 7 0 10 -261234 -1 -1 100 256;
 #X obj 160 146 nbx 5 14 0 10000 0 0 /kofwin/position/y /kofwin/position/y
-y -10 7 0 10 -261234 -1 -1 0 256;
+y -10 7 0 10 -261234 -1 -1 100 256;
 #X obj 80 131 nbx 5 14 0 10000 0 0 /kofwin/window/x /kofwin/window/x
-x -10 7 0 10 -261234 -1 -1 1024 256;
+x -10 7 0 10 -261234 -1 -1 800 256;
 #X obj 80 147 nbx 5 14 0 10000 0 0 /kofwin/window/y /kofwin/window/y
-y -10 7 0 10 -261234 -1 -1 768 256;
+y -10 7 0 10 -261234 -1 -1 600 256;
 #X text 86 110 size;
 #X text 156 110 position;
 #X obj 83 171 nbx 5 14 0 10000 0 0 /kofwin/framerate /kofwin/framerate
-fps -20 7 0 10 -261234 -1 -1 0 256;
+fps -20 7 0 10 -261234 -1 -1 25 256;
 #X obj 152 83 bng 15 250 50 0 empty empty advanced 17 7 0 10 -159808
 -1 -1;
 #X msg 243 112 vis 1;
@@ -103,36 +109,53 @@ fps -20 7 0 10 -261234 -1 -1 0 256;
 #X obj 612 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 670 123 5 0 0 0 - - -, f 5;
+#X obj 749 452 pack f f f;
+#X obj 786 409 t b f;
+#X obj 786 387 r /kofwin/background/G;
+#X obj 836 431 t b f;
+#X obj 749 494 list trim;
+#X obj 756 367 r /kofwin/background/R;
+#X obj 836 409 r /kofwin/background/B;
+#X obj 749 472 list prepend background;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
 #X connect 11 1 13 0;
 #X connect 14 0 9 0;
-#X connect 15 0 9 0;
-#X connect 16 0 46 0;
-#X connect 17 0 18 0;
-#X connect 17 0 49 0;
-#X connect 18 0 46 0;
-#X connect 18 1 46 1;
-#X connect 19 0 20 0;
-#X connect 20 0 9 0;
-#X connect 21 0 14 0;
-#X connect 22 0 23 0;
+#X connect 15 0 45 0;
+#X connect 16 0 17 0;
+#X connect 16 0 48 0;
+#X connect 17 0 45 0;
+#X connect 17 1 45 1;
+#X connect 18 0 19 0;
+#X connect 19 0 9 0;
+#X connect 20 0 14 0;
+#X connect 21 0 22 0;
+#X connect 22 0 9 0;
 #X connect 23 0 9 0;
 #X connect 24 0 9 0;
-#X connect 25 0 9 0;
+#X connect 25 0 23 0;
 #X connect 26 0 24 0;
-#X connect 27 0 25 0;
-#X connect 28 0 29 0;
-#X connect 28 1 29 1;
-#X connect 29 0 33 0;
-#X connect 30 0 9 0;
-#X connect 31 0 29 0;
-#X connect 32 0 28 0;
-#X connect 33 0 30 0;
+#X connect 27 0 28 0;
+#X connect 27 1 28 1;
+#X connect 28 0 32 0;
+#X connect 29 0 9 0;
+#X connect 30 0 28 0;
+#X connect 31 0 27 0;
+#X connect 32 0 29 0;
+#X connect 41 0 42 0;
 #X connect 42 0 43 0;
-#X connect 43 0 44 0;
-#X connect 46 0 19 0;
-#X connect 47 0 46 2;
-#X connect 47 0 48 0;
+#X connect 45 0 18 0;
+#X connect 46 0 45 2;
+#X connect 46 0 47 0;
+#X connect 49 0 56 0;
+#X connect 50 0 49 0;
+#X connect 50 1 49 1;
+#X connect 51 0 50 0;
+#X connect 52 0 49 0;
+#X connect 52 1 49 2;
+#X connect 53 0 9 0;
+#X connect 54 0 49 0;
+#X connect 55 0 52 0;
+#X connect 56 0 53 0;
 #X coords 0 -1 1 1 172 150 1 60 55;

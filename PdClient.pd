@@ -32,7 +32,7 @@
 #X obj 176 324 netsend;
 #X obj 214 60 loadbang;
 #X msg 214 83 1;
-#X msg 176 288 disconnect \, connect tour4 424242;
+#X msg 176 288 disconnect \, connect 127.0.0.1 424242;
 #X connect 0 0 31 0;
 #X connect 1 0 3 0;
 #X connect 1 1 24 0;
