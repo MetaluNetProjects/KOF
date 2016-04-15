@@ -1,4 +1,4 @@
-#N canvas 641 94 718 486 10;
+#N canvas 557 109 718 486 10;
 #X obj 157 97 pofutil;
 #X obj 157 117 route dirbaseext;
 #X msg 157 75 dirbaseext /\$1;
@@ -23,7 +23,7 @@
 #X msg 184 264 0;
 #X obj 194 330 == 0;
 #X text 404 294 0:image 1:video;
-#X obj 449 351 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 534 307 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 157 24 symbol;
 #X obj 121 7 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -32,6 +32,8 @@
 #X obj 157 50 t s b;
 #X msg 157 218 set \$1/../media/img/\$2.\$3;
 #X msg 352 217 load \$1/../media/vid/\$2.\$3 \, play 1;
+#X msg 457 360 play 0;
+#X obj 457 338 sel 0;
 #X connect 0 0 1 0;
 #X connect 1 0 7 0;
 #X connect 2 0 0 0;
@@ -54,6 +56,7 @@
 #X connect 17 1 19 0;
 #X connect 18 0 13 0;
 #X connect 18 0 22 0;
+#X connect 18 0 32 0;
 #X connect 19 0 18 0;
 #X connect 20 0 10 0;
 #X connect 20 1 21 0;
@@ -65,3 +68,5 @@
 #X connect 28 1 5 0;
 #X connect 29 0 20 0;
 #X connect 30 0 17 0;
+#X connect 31 0 11 0;
+#X connect 32 0 31 0;
