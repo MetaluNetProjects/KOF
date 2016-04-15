@@ -1,30 +1,16 @@
-#N canvas 171 75 591 443 10;
-#X obj 113 371 system;
+#N canvas 40 483 954 432 10;
 #X obj 182 257 r RASPI-ip;
 #X obj 113 301 list prepend;
 #X obj 113 347 list trim;
 #X msg 182 278 nohup ssh pi@\$1;
 #X obj 113 324 list append &;
-#X obj 68 79 symbol;
-#X obj 68 128 s RASPI-ip;
-#X msg 159 43 127.0.0.1;
-#X symbolatom 68 103 15 0 0 0 - - -, f 15;
-#X obj 68 17 loadbang;
-#X msg 68 44 192.168.1.71;
-#X obj 422 323 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X msg 419 347 TALK _all_ Lyre setY \$1;
-#X obj 239 326 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X msg 237 348 TALK _all_ Lyre setX \$1;
-#X obj 481 67 route Lyre;
-#X obj 481 91 route X Y;
-#X obj 481 42 r \$1-fromserver;
-#X obj 341 380 s \$1-toserver;
-#X obj 227 419 Lyre/motorlimit2 0.05 0.005 0.08 0.04;
-#X msg 370 228 /home/pi/Documents/OF/of_v0.9.3_linuxarmv6l_release/apps/myApps/pofStandaloneArgs/bin/pofStandaloneArgs
--hidecursor -open /home/pi/Documents/KOF/kof/slave_quad_pi.pd;
-#N canvas 93 149 879 503 win 0;
+#X obj 207 79 symbol;
+#X obj 207 128 s RASPI-ip;
+#X msg 298 43 127.0.0.1;
+#X symbolatom 207 103 15 0 0 0 - - -, f 15;
+#X obj 207 17 loadbang;
+#X msg 207 44 192.168.1.71;
+#N canvas 91 154 879 503 win 0;
 #X obj 147 233 s /osc/0/out;
 #X obj 122 134 pack f \$1;
 #X obj 122 45 f \$1;
@@ -49,7 +35,7 @@
 0 \, /\$1 /kofwin/position/y 0 \, /\$1 /kofwin/window/x 1024 \, /\$1
 /kofwin/window/y 768 \, /\$1 /kofwin/normalizedtexcoords 1;
 #X obj 194 79 inlet;
-#X obj 470 22 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 470 22 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 667 72 symbol PI;
 #X obj 658 95 pack s f;
@@ -90,28 +76,62 @@
 #X connect 26 0 0 0;
 #X connect 27 0 26 0;
 #X restore 389 78 pd win;
-#X obj 388 60 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 389 60 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 374 268 killall pofStandaloneArgs;
 #X msg 60 184 /home/pi/Documents/OF/of_v0.9.3_linuxarmv6l_release/addons/ofxPof/exampleStandalone/bin/exampleStandalone
 -hidecursor -open /home/pi/Documents/KOF/kof/slave_quad_pi.pd;
 #X msg 113 238 killall exampleStandalone;
+#X obj 113 371 ggee/shell;
+#X obj 106 122 bng 15 250 50 0 empty empty start 17 7 0 10 -262144
+-1 -1;
+#X obj 139 140 bng 15 250 50 0 empty empty stop 17 7 0 10 -258113 -1
+-1;
+#X obj 549 132 pofutil;
+#X msg 549 108 getdir;
+#X obj 549 44 r /ds/0/resave;
+#X obj 549 65 b;
+#X symbolatom 671 120 0 0 0 0 - - -;
+#X obj 626 97 r /ds/0/filename;
+#X obj 626 118 symbol;
+#X msg 751 191 symbol \$1/kollabs/\$2;
+#X obj 549 180 list append;
+#X obj 605 97 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 549 153 route getdir;
+#X obj 549 282 ggee/shell;
+#X obj 636 179 r RASPI-ip;
+#X obj 549 203 list append;
+#X msg 549 226 nohup scp \$1/kollabs/\$2 pi@\$3:/home/pi/Documents/KOF/kollabs/\$2
+&;
+#X obj 549 86 del 100;
+#X obj 662 306 print;
+#X connect 0 0 3 0;
 #X connect 1 0 4 0;
-#X connect 2 0 5 0;
-#X connect 3 0 0 0;
-#X connect 4 0 2 1;
-#X connect 5 0 3 0;
-#X connect 6 0 9 0;
+#X connect 2 0 15 0;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
+#X connect 5 0 8 0;
+#X connect 7 0 5 0;
 #X connect 8 0 6 0;
-#X connect 9 0 7 0;
-#X connect 10 0 11 0;
-#X connect 11 0 6 0;
-#X connect 12 0 13 0;
-#X connect 13 0 19 0;
-#X connect 14 0 15 0;
-#X connect 15 0 19 0;
-#X connect 16 0 17 0;
-#X connect 18 0 16 0;
-#X connect 23 0 22 0;
-#X connect 25 0 2 0;
-#X connect 26 0 2 0;
+#X connect 9 0 10 0;
+#X connect 10 0 5 0;
+#X connect 12 0 11 0;
+#X connect 13 0 1 0;
+#X connect 14 0 1 0;
+#X connect 16 0 13 0;
+#X connect 17 0 14 0;
+#X connect 18 0 28 0;
+#X connect 19 0 18 0;
+#X connect 20 0 21 0;
+#X connect 21 0 33 0;
+#X connect 23 0 24 0;
+#X connect 24 0 22 0;
+#X connect 24 0 26 1;
+#X connect 26 0 31 0;
+#X connect 27 0 24 0;
+#X connect 28 0 26 0;
+#X connect 30 0 31 1;
+#X connect 31 0 32 0;
+#X connect 32 0 29 0;
+#X connect 33 0 19 0;
+#X coords 0 -1 1 1 85 60 1 100 100;
