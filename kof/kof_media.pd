@@ -1,8 +1,8 @@
-#N canvas 469 209 965 433 10;
+#N canvas 314 214 965 433 10;
 #X obj 61 72 cnv 15 198 31 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 65 76 tgl 15 1 /kof/\$1/state /kof/\$1/state on/off 17 7 0 10
--4034 -1 -1 1 1;
+-4034 -1 -1 0 1;
 #X msg 158 121 vis 1;
 #X obj 158 76 bng 15 250 50 0 empty empty settings 17 7 0 10 -159808
 -1 -1;
@@ -38,9 +38,9 @@
 #X restore 27 149 pd storage_&_osc;
 #X obj 14 242 cnv 15 360 60 empty empty creation_arguments: 3 8 0 12
 -191407 -1 0;
-#X obj 402 114 poftranslate;
-#X obj 402 158 pofscale 1 1;
-#X obj 402 136 pofrotate;
+#X obj 825 79 poftranslate;
+#X obj 825 123 pofscale 1 1;
+#X obj 825 101 pofrotate;
 #N canvas 172 163 507 632 corners 0;
 #X obj 58 568 outlet;
 #X obj 58 88 r /kof/\$1/corner/top/left/x;
@@ -75,36 +75,41 @@
 #X connect 14 0 10 0;
 #X connect 15 0 11 0;
 #X connect 16 0 12 0;
-#X restore 528 295 pd corners;
-#X obj 702 114 poftranslate;
-#X obj 702 158 pofscale 1 1;
-#X obj 702 136 pofrotate;
+#X restore 564 291 pd corners;
+#X obj 310 72 poftranslate;
+#X obj 310 116 pofscale 1 1;
+#X obj 310 94 pofrotate;
 #X obj 459 262 r /kof/\$1/media/1;
-#X obj 702 214 pofcolor 1 1 1 1;
-#X obj 402 214 pofcolor 1 1 1 1;
+#X obj 702 225 pofcolor 1 1 1 1;
+#X obj 402 225 pofcolor 1 1 1 1;
 #X text 19 261 1st: module ID \, needs to be unique \; 2nd: storage
 domain;
 #X obj 158 145 s pd-cfg_\$1;
-#N canvas 49 676 413 151 cfg_\$1 0;
+#N canvas 45 686 413 151 cfg_\$1 0;
 #X obj 2 2 cnv 15 170 145 empty empty QUAD 20 12 0 14 -233017 -66577
 0;
 #X obj 21 92 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/left/x /kof/\$1/corner/top/left/x
-x -10 7 0 10 -261234 -1 -1 -200 256;
+x -10 7 0 10 -261234 -1 -1 -244.275 256;
 #X obj 21 108 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/left/y
-/kof/\$1/corner/top/left/y y -10 7 0 10 -261234 -1 -1 200 256;
-#X obj 98 92 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/right/x
-/kof/\$1/corner/top/right/x x -10 7 0 10 -261234 -1 -1 200 256;
-#X obj 98 108 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/right/y
-/kof/\$1/corner/top/right/y y -10 7 0 10 -261234 -1 -1 200 256;
-#X obj 21 56 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/left/x
-/kof/\$1/corner/bottom/left/x x -10 7 0 10 -261234 -1 -1 -200 256;
-#X obj 21 72 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/left/y
-/kof/\$1/corner/bottom/left/y y -10 7 0 10 -261234 -1 -1 -200 256;
-#X obj 98 56 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/right/x
-/kof/\$1/corner/bottom/right/x x -10 7 0 10 -261234 -1 -1 200 256;
-#X obj 98 72 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/right/y
-/kof/\$1/corner/bottom/right/y y -10 7 0 10 -261234 -1 -1 -200 256
+/kof/\$1/corner/top/left/y y -10 7 0 10 -261234 -1 -1 -96.0601 256
 ;
+#X obj 98 92 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/right/x
+/kof/\$1/corner/top/right/x x -10 7 0 10 -261234 -1 -1 115.518 256
+;
+#X obj 98 108 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/right/y
+/kof/\$1/corner/top/right/y y -10 7 0 10 -261234 -1 -1 142.86 256;
+#X obj 21 56 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/left/x
+/kof/\$1/corner/bottom/left/x x -10 7 0 10 -261234 -1 -1 -228.68 256
+;
+#X obj 21 72 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/left/y
+/kof/\$1/corner/bottom/left/y y -10 7 0 10 -261234 -1 -1 -8.15395 256
+;
+#X obj 98 56 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/right/x
+/kof/\$1/corner/bottom/right/x x -10 7 0 10 -261234 -1 -1 162.47 256
+;
+#X obj 98 72 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/right/y
+/kof/\$1/corner/bottom/right/y y -10 7 0 10 -261234 -1 -1 -197.524
+256;
 #X text 14 32 corners position;
 #X obj 179 2 cnv 15 190 145 empty empty MEDIA&MIX 20 12 0 14 -233017
 -66577 0;
@@ -113,11 +118,11 @@ x -10 7 0 10 -261234 -1 -1 -200 256;
 #X obj 268 36 bng 15 250 50 0 /kof/\$1/media/2/openpanel empty player_2
 17 7 0 10 -262144 -1 -1;
 #X obj 197 80 vsl 15 60 0 1 0 0 /kof/\$1/alpha/1 /kof/\$1/alpha/1 alpha1
--10 -9 0 10 -262144 -1 -1 2950 0;
+-10 -9 0 10 -262144 -1 -1 0 0;
 #X obj 247 80 vsl 15 60 0 1 0 0 /kof/\$1/alpha/2 /kof/\$1/alpha/2 alpha2
--10 -9 0 10 -262144 -1 -1 2950 0;
+-10 -9 0 10 -262144 -1 -1 5900 0;
 #X obj 297 80 vsl 15 60 0 2000 0 0 /kof/\$1/fadetime /kof/\$1/fadetime
-time -10 -9 0 10 -262144 -1 -1 0 0;
+time -10 -9 0 10 -262144 -1 -1 3298 0;
 #X obj 332 85 vradio 15 1 0 3 /kof/\$1/fademode /kof/\$1/fademode mode
 0 -8 0 10 -262144 -1 -1 2;
 #X coords 0 0 1 1 155 300 0;
@@ -327,8 +332,8 @@ time -10 -9 0 10 -262144 -1 -1 0 0;
 #X connect 31 0 11 0;
 #X connect 32 0 31 0;
 #X connect 33 0 32 0;
-#X restore 562 232 pd medias&folders;
-#N canvas 7 75 450 300 alpha 0;
+#X restore 561 191 pd medias&folders;
+#N canvas 5 80 450 300 alpha 0;
 #X obj 250 231 line;
 #X obj 250 207 pack f f;
 #X obj 303 187 r /kof/\$1/fadetime;
@@ -364,7 +369,7 @@ time -10 -9 0 10 -262144 -1 -1 0 0;
 #X connect 13 0 19 0;
 #X connect 14 0 15 0;
 #X connect 17 0 16 0;
-#X restore 571 173 pd alpha;
+#X restore 560 81 pd alpha;
 #N canvas 771 182 450 300 init 0;
 #X obj 98 76 loadbang;
 #X obj 98 98 list append \$1;
@@ -380,9 +385,7 @@ time -10 -9 0 10 -262144 -1 -1 0 0;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;
 #X restore 26 121 pd init;
-#X obj 402 81 pofvisible 1;
 #X obj 402 43 r /kof/\$1/state;
-#X obj 702 79 pofvisible 1;
 #X obj 702 50 r /kof/\$1/state;
 #X obj 402 381 pofquad 200 200;
 #X text 34 316 TODO;
@@ -397,34 +400,50 @@ time -10 -9 0 10 -262144 -1 -1 0 0;
 #X obj 759 251 r /kof/\$1/media/2;
 #X obj 402 283 kof_source;
 #X obj 702 275 kof_source;
+#X obj 402 202 pofvisible 0;
+#X obj 702 194 pofvisible 0;
+#X obj 420 135 != 0;
+#X obj 420 156 t b f;
+#X obj 402 180 *;
+#X obj 720 125 != 0;
+#X obj 720 146 t b f;
+#X obj 702 170 *;
 #X connect 2 0 17 0;
 #X connect 3 0 2 0;
 #X connect 6 0 8 0;
-#X connect 7 0 15 0;
 #X connect 8 0 7 0;
-#X connect 9 0 26 0;
+#X connect 9 0 24 0;
+#X connect 9 0 31 0;
+#X connect 9 0 32 0;
 #X connect 9 0 33 0;
-#X connect 9 0 34 0;
-#X connect 9 0 35 0;
 #X connect 10 0 12 0;
-#X connect 11 0 14 0;
 #X connect 12 0 11 0;
-#X connect 13 0 37 1;
-#X connect 14 0 38 0;
-#X connect 15 0 37 0;
+#X connect 13 0 35 1;
+#X connect 14 0 36 0;
+#X connect 15 0 35 0;
 #X connect 20 0 15 4;
+#X connect 20 0 39 0;
 #X connect 20 1 14 4;
-#X connect 22 0 6 0;
-#X connect 23 0 22 0;
-#X connect 24 0 10 0;
-#X connect 25 0 24 0;
-#X connect 30 0 31 0;
-#X connect 31 0 22 0;
-#X connect 31 1 24 0;
-#X connect 32 0 31 0;
-#X connect 36 0 38 1;
-#X connect 37 0 26 0;
-#X connect 37 1 33 0;
-#X connect 38 0 34 0;
-#X connect 38 1 35 0;
+#X connect 20 1 42 0;
+#X connect 22 0 41 0;
+#X connect 23 0 44 0;
+#X connect 28 0 29 0;
+#X connect 29 0 37 0;
+#X connect 29 1 38 0;
+#X connect 30 0 29 0;
+#X connect 34 0 36 1;
+#X connect 35 0 24 0;
+#X connect 35 1 31 0;
+#X connect 36 0 32 0;
+#X connect 36 1 33 0;
+#X connect 37 0 15 0;
+#X connect 38 0 14 0;
+#X connect 39 0 40 0;
+#X connect 40 0 41 0;
+#X connect 40 1 41 1;
+#X connect 41 0 37 0;
+#X connect 42 0 43 0;
+#X connect 43 0 44 0;
+#X connect 43 1 44 1;
+#X connect 44 0 38 0;
 #X coords 0 -1 1 1 200 50 1 60 55;
