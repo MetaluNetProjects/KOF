@@ -1,0 +1,3 @@
+#N canvas 447 110 558 366 10;
+#X declare -path ../kollabs -lib pof;
+#X obj 20 18 slave_quad 3;

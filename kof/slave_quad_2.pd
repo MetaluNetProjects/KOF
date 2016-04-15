@@ -1,0 +1,2 @@
+#N canvas 449 105 558 366 10;
+#X obj 20 18 slave_quad 2;
