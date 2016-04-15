@@ -1,0 +1,225 @@
+#N canvas 312 413 965 610 10;
+#X obj 61 72 cnv 15 198 31 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 65 76 tgl 15 1 /kof/\$1/state /kof/\$1/state on/off 17 7 0 10
+-4034 -1 -1 1 1;
+#X msg 158 121 vis 1;
+#X obj 158 76 bng 15 250 50 0 empty empty settings 17 7 0 10 -159808
+-1 -1;
+#N canvas 105 342 768 540 storage_&_osc 0;
+#X obj 39 251 ds_reg \$2 /kof/\$1/state;
+#X obj 369 251 osc_bi \$2 /kof/\$1/state;
+#X obj 39 331 ds_reg \$2 /kof/\$1/limit/size;
+#X obj 369 331 osc_bi \$2 /kof/\$1/limit/size;
+#X obj 39 11 ds_reg \$2 /kof/\$1/corner/top/left/x;
+#X obj 369 11 osc_bi \$2 /kof/\$1/corner/top/left/x;
+#X obj 39 31 ds_reg \$2 /kof/\$1/corner/top/left/y;
+#X obj 369 31 osc_bi \$2 /kof/\$1/corner/top/left/y;
+#X obj 39 51 ds_reg \$2 /kof/\$1/corner/top/right/x;
+#X obj 39 71 ds_reg \$2 /kof/\$1/corner/top/right/y;
+#X obj 39 91 ds_reg \$2 /kof/\$1/corner/bottom/right/x;
+#X obj 39 111 ds_reg \$2 /kof/\$1/corner/bottom/right/y;
+#X obj 39 131 ds_reg \$2 /kof/\$1/corner/bottom/left/x;
+#X obj 39 151 ds_reg \$2 /kof/\$1/corner/bottom/left/y;
+#X obj 369 51 osc_bi \$2 /kof/\$1/corner/top/right/x;
+#X obj 369 71 osc_bi \$2 /kof/\$1/corner/top/right/y;
+#X obj 369 91 osc_bi \$2 /kof/\$1/corner/bottom/right/x;
+#X obj 369 111 osc_bi \$2 /kof/\$1/corner/bottom/right/y;
+#X obj 369 131 osc_bi \$2 /kof/\$1/corner/bottom/left/x;
+#X obj 369 151 osc_bi \$2 /kof/\$1/corner/bottom/left/y;
+#X restore 27 149 pd storage_&_osc;
+#X obj 14 242 cnv 15 360 60 empty empty creation_arguments: 3 8 0 12
+-191407 -1 0;
+#X obj 402 114 poftranslate;
+#X obj 402 158 pofscale 1 1;
+#X obj 402 136 pofrotate;
+#X obj 402 214 pofcolor 1 1 1 1;
+#X text 19 261 1st: module ID \, needs to be unique \; 2nd: storage
+domain;
+#X obj 158 145 s pd-cfg_\$1;
+#N canvas 38 754 413 151 cfg_\$1 1;
+#X obj 2 2 cnv 15 220 145 empty empty QUAD 20 12 0 14 -233017 -66577
+0;
+#X obj 21 92 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/left/x /kof/\$1/corner/top/left/x
+x -10 7 0 10 -261234 -1 -1 -334 256;
+#X obj 21 108 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/left/y
+/kof/\$1/corner/top/left/y y -10 7 0 10 -261234 -1 -1 284 256;
+#X obj 98 92 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/right/x
+/kof/\$1/corner/top/right/x x -10 7 0 10 -261234 -1 -1 350 256;
+#X obj 98 108 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/top/right/y
+/kof/\$1/corner/top/right/y y -10 7 0 10 -261234 -1 -1 253 256;
+#X obj 21 56 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/left/x
+/kof/\$1/corner/bottom/left/x x -10 7 0 10 -261234 -1 -1 -356 256;
+#X obj 21 72 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/left/y
+/kof/\$1/corner/bottom/left/y y -10 7 0 10 -261234 -1 -1 -73 256;
+#X obj 98 56 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/right/x
+/kof/\$1/corner/bottom/right/x x -10 7 0 10 -261234 -1 -1 291 256;
+#X obj 98 72 nbx 5 14 -10000 10000 0 0 /kof/\$1/corner/bottom/right/y
+/kof/\$1/corner/bottom/right/y y -10 7 0 10 -261234 -1 -1 -194 256
+;
+#X text 14 32 corners position;
+#X obj 150 7 nbx 5 14 -1e+37 1e+37 0 0 /kof/\$1/limit/size /kof/\$1/limit/size
+Size -27 7 0 10 -262144 -1 -1 1332 256;
+#X coords 0 0 1 1 155 300 0;
+#X restore 158 167 pd cfg_\$1;
+#N canvas 532 586 747 404 init 0;
+#X obj 92 9 loadbang;
+#X obj 92 31 list append \$1;
+#X obj 167 7 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 96 58 \; /kof/\$1/limit/size 500 \; /kof/\$1/state 1 \; /kof/\$1/corner/top/left/x
+-200 \; /kof/\$1/corner/top/left/y 200 \; /kof/\$1/corner/top/right/x
+200 \; /kof/\$1/corner/top/right/y 200 \; /kof/\$1/corner/bottom/right/x
+200 \; /kof/\$1/corner/bottom/right/y -200 \; /kof/\$1/corner/bottom/left/x
+-200 \; /kof/\$1/corner/bottom/left/y -200 \;;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X restore 26 121 pd init;
+#X obj 402 81 pofvisible 1;
+#X obj 422 54 r /kof/\$1/state;
+#X obj 402 531 pofquad 200 200;
+#X text 34 316 TODO;
+#X text 30 339 inversion corners top/bottom;
+#X text 34 370 liste medias Cream;
+#X obj 402 8 inlet;
+#X obj 422 30 r /pofhead/slave;
+#N canvas 182 453 1095 570 cornerslogic 0;
+#X obj 20 175 r /kof/\$1/corner/top/left/x;
+#X obj 264 173 r /kof/\$1/corner/top/left/y;
+#X obj 20 205 s /kof/\$1/L/corner/top/right/x;
+#X obj 264 204 s /kof/\$1/L/corner/top/right/y;
+#X obj 784 43 r /kof/\$1/corner/bottom/right/y;
+#X obj 550 175 r /kof/\$1/corner/top/right/x;
+#X obj 794 173 r /kof/\$1/corner/top/right/y;
+#X obj 10 87 s /kof/\$1/L/corner/bottom/right/x;
+#X obj 254 74 s /kof/\$1/L/corner/bottom/right/y;
+#X obj 20 135 s /kof/\$1/T/corner/top/right/y;
+#X obj 264 94 s /kof/\$1/T/corner/top/right/x;
+#X obj 540 75 s /kof/\$1/T/corner/bottom/right/y;
+#X text 18 -7 corners du quad "central" pilote les 4 quads mask;
+#X obj 12 366 r /kof/\$1/limit/size;
+#X obj 12 393 * -1;
+#X obj 12 425 s /kof/\$1/L/corner/bottom/left/x;
+#X obj 12 445 s /kof/\$1/L/corner/top/left/x;
+#X obj 351 326 s /kof/\$1/limit/size;
+#X floatatom 356 287 5 0 0 0 - - -, f 5;
+#X obj 12 465 s /kof/\$1/L/corner/bottom/left/y;
+#X obj 52 393 s /kof/\$1/L/corner/top/left/y;
+#X obj 286 360 r /kof/\$1/limit/size;
+#X obj 286 387 * -1;
+#X obj 326 387 s /kof/\$1/T/corner/top/left/y;
+#X obj 286 419 s /kof/\$1/T/corner/bottom/left/x;
+#X obj 286 439 s /kof/\$1/T/corner/top/left/x;
+#X obj 286 459 s /kof/\$1/T/corner/bottom/left/y;
+#X obj 566 360 r /kof/\$1/limit/size;
+#X obj 566 387 * -1;
+#X obj 606 387 s /kof/\$1/R/corner/top/left/y;
+#X obj 566 419 s /kof/\$1/R/corner/bottom/left/x;
+#X obj 566 439 s /kof/\$1/R/corner/top/left/x;
+#X obj 566 459 s /kof/\$1/R/corner/bottom/left/y;
+#X obj 839 361 r /kof/\$1/limit/size;
+#X obj 839 388 * -1;
+#X obj 879 388 s /kof/\$1/B/corner/top/left/y;
+#X obj 839 420 s /kof/\$1/B/corner/bottom/left/x;
+#X obj 839 440 s /kof/\$1/B/corner/top/left/x;
+#X obj 839 460 s /kof/\$1/B/corner/bottom/left/y;
+#X text 25 300 limite carrée exterieure;
+#X obj 550 95 s /kof/\$1/R/corner/top/right/x;
+#X obj 794 95 * -1;
+#X obj 794 224 s /kof/\$1/R/corner/bottom/right/y;
+#X obj 30 225 s /kof/\$1/B/corner/bottom/right/y;
+#X obj 274 244 s /kof/\$1/B/corner/bottom/right/x;
+#X obj 275 223 * -1;
+#X obj 804 244 s /kof/\$1/B/corner/top/right/x;
+#X obj 560 226 * -1;
+#X obj 10 25 r /kof/\$1/corner/bottom/left/x;
+#X obj 254 23 r /kof/\$1/corner/bottom/left/y;
+#X obj 23 112 * -1;
+#X obj 254 43 * 1;
+#X obj 550 265 s /kof/\$1/R/corner/bottom/right/x;
+#X obj 550 195 s /kof/\$1/B/corner/top/right/y;
+#X obj 540 25 r /kof/\$1/corner/bottom/right/x;
+#X obj 540 45 * -1;
+#X obj 784 64 s /kof/\$1/T/corner/bottom/right/x;
+#X obj 794 114 s /kof/\$1/R/corner/top/right/y;
+#X obj 794 195 * -1;
+#X connect 0 0 2 0;
+#X connect 0 0 43 0;
+#X connect 1 0 3 0;
+#X connect 1 0 45 0;
+#X connect 4 0 41 0;
+#X connect 4 0 56 0;
+#X connect 5 0 47 0;
+#X connect 5 0 53 0;
+#X connect 6 0 58 0;
+#X connect 13 0 14 0;
+#X connect 13 0 20 0;
+#X connect 14 0 15 0;
+#X connect 14 0 16 0;
+#X connect 14 0 19 0;
+#X connect 18 0 17 0;
+#X connect 21 0 22 0;
+#X connect 21 0 23 0;
+#X connect 22 0 24 0;
+#X connect 22 0 25 0;
+#X connect 22 0 26 0;
+#X connect 27 0 28 0;
+#X connect 27 0 29 0;
+#X connect 28 0 30 0;
+#X connect 28 0 31 0;
+#X connect 28 0 32 0;
+#X connect 33 0 34 0;
+#X connect 33 0 35 0;
+#X connect 34 0 36 0;
+#X connect 34 0 37 0;
+#X connect 34 0 38 0;
+#X connect 41 0 57 0;
+#X connect 45 0 44 0;
+#X connect 47 0 52 0;
+#X connect 48 0 7 0;
+#X connect 48 0 50 0;
+#X connect 49 0 10 0;
+#X connect 49 0 51 0;
+#X connect 50 0 9 0;
+#X connect 51 0 8 0;
+#X connect 54 0 55 0;
+#X connect 55 0 11 0;
+#X connect 55 0 40 0;
+#X connect 58 0 42 0;
+#X connect 58 0 46 0;
+#X restore 631 366 pd cornerslogic;
+#X obj 402 258 t a a a a;
+#X obj 422 481 pofquad 200 200;
+#X obj 442 401 pofquad 200 200;
+#X obj 462 331 pofquad 200 200;
+#X obj 422 438 pofrotate 90;
+#X obj 442 358 pofrotate 180;
+#X obj 462 288 pofrotate -90;
+#X obj 402 235 pofimage mask2.png tex;
+#X obj 471 310 kof_quadcorners \$1 B \$2;
+#X obj 411 510 kof_quadcorners \$1 L \$2;
+#X obj 431 460 kof_quadcorners \$1 T \$2;
+#X obj 451 380 kof_quadcorners \$1 R \$2;
+#X connect 2 0 11 0;
+#X connect 3 0 2 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 30 0;
+#X connect 14 0 6 0;
+#X connect 15 0 14 0;
+#X connect 20 0 14 0;
+#X connect 23 0 16 0;
+#X connect 23 1 27 0;
+#X connect 23 2 28 0;
+#X connect 23 3 29 0;
+#X connect 27 0 24 0;
+#X connect 28 0 25 0;
+#X connect 29 0 26 0;
+#X connect 30 0 23 0;
+#X connect 31 0 26 0;
+#X connect 32 0 16 0;
+#X connect 33 0 24 0;
+#X connect 34 0 25 0;
+#X coords 0 -1 1 1 200 50 1 60 55;
