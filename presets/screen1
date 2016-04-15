@@ -17,11 +17,14 @@
 # SETTINGS
 # TABLES
 # DATA
-/kof/MASK/limit/size 500
-/kof/MASK/state 1
-/kofwin/background/B 181.525
-/kofwin/background/G 255
-/kofwin/background/R 82.1186
+/kofwin/background/B 0
+/kofwin/background/G 0
+/kofwin/background/R 0
+/kofwin/position/y 0
+/kofwin/position/x 1440
+/kofwin/normalizedtexcoords 1
+/kofwin/window/y 768
+/kofwin/window/x 1024
 ======================== SCENE 1 ========================
 # PROPERTIES
 /duration 0
