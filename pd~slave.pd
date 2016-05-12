@@ -1,90 +1,100 @@
-#N canvas 1 209 988 701 10;
-#X obj 165 359 pd~ -ninsig 2 -noutsig 2 -fifo 20;
-#X msg 235 317 pd~ stop;
-#X obj 113 80 bng 15 250 50 0 empty empty start 17 7 0 10 -262144 -1
+#N canvas 448 96 988 701 10;
+#X obj 165 376 pd~ -ninsig 2 -noutsig 2 -fifo 20;
+#X msg 235 334 pd~ stop;
+#X obj 107 71 bng 15 250 50 0 empty empty start 17 7 0 10 -262144 -1
 -1;
-#X obj 179 108 t b b;
-#X obj 251 140 delay 1000;
-#X obj 251 169 f \$1;
-#X obj 103 178 bng 15 250 50 0 empty empty save 17 7 0 10 -262144 -1
+#X obj 169 161 t b b;
+#X obj 251 157 delay 1000;
+#X obj 251 186 f \$1;
+#X obj 103 195 bng 15 250 50 0 empty empty save 17 7 0 10 -262144 -1
 -1;
-#X msg 103 241 /save bang;
-#X msg 472 255 \; pd quit;
-#X obj 261 22 s /kowin/pos/x;
-#X floatatom 363 87 5 0 0 0 - - -, f 5;
-#X obj 408 209 s /osc/0/out;
-#X obj 408 134 pack f \$1;
-#X obj 408 45 f \$1;
-#X obj 408 67 - 1;
-#X obj 408 89 * 1024;
-#X obj 408 111 + 1440;
-#X obj 561 254 f \$1;
-#X obj 562 227 del 3000;
-#X obj 562 204 b;
-#X obj 408 23 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X msg 103 258 /save bang;
+#X msg 472 272 \; pd quit;
+#X obj 261 39 s /kowin/pos/x;
+#X floatatom 363 104 5 0 0 0 - - -, f 5;
+#X obj 408 226 s /osc/0/out;
+#X obj 408 62 f \$1;
+#X obj 408 84 - 1;
+#X obj 408 106 * 1024;
+#X obj 408 128 + 1440;
+#X obj 561 271 f \$1;
+#X obj 562 244 del 3000;
+#X obj 562 221 b;
+#X obj 408 40 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 559 281 /\$1 /kofwin/fullscreen 0 \, /\$1 /kofwin/position/x
+#X msg 559 298 /\$1 /kofwin/fullscreen 0 \, /\$1 /kofwin/position/x
 50 \, /\$1 /kofwin/position/y 50;
-#X obj 793 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 793 90 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 243 100 delay 3000;
-#X obj 298 169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 243 117 delay 3000;
+#X obj 298 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 179 192 pofutil;
-#X msg 179 171 getdir;
-#X msg 179 214 symbol \$1;
-#X obj 179 238 pack s \$1;
-#X msg 179 288 pd~ start \$1/kof/slave_quad_\$2.pd;
-#X msg 293 213 /init \$1;
-#X msg 251 189 /init/delayed \$1;
-#X obj 499 367 print;
-#X obj 141 594 list trim;
-#X obj 141 571 list append &;
-#X obj 141 618 ggee/shell;
-#X obj 141 548 list prepend nohup;
-#X msg 141 525 pd -noaudio -open \$1/kof/slave_quad_\$2.pd;
-#X obj 383 550 print;
-#X obj 141 455 pofutil;
-#X msg 141 434 getdir;
-#X msg 141 477 symbol \$1;
-#X obj 141 501 pack s \$1;
-#X msg 408 163 /\$2 /kofwin/fullscreen 0 \, /\$2 /kofwin/position/x
+#X obj 179 209 pofutil;
+#X msg 179 188 getdir;
+#X msg 179 231 symbol \$1;
+#X obj 179 255 pack s \$1;
+#X msg 179 305 pd~ start \$1/kof/slave_quad_\$2.pd;
+#X msg 293 230 /init \$1;
+#X msg 251 206 /init/delayed \$1;
+#X obj 499 384 print;
+#X obj 141 611 list trim;
+#X obj 141 588 list append &;
+#X obj 141 565 list prepend nohup;
+#X msg 141 542 pd -noaudio -open \$1/kof/slave_quad_\$2.pd;
+#X obj 383 567 print;
+#X obj 141 472 pofutil;
+#X msg 141 451 getdir;
+#X msg 141 494 symbol \$1;
+#X obj 141 518 pack s \$1;
+#X msg 408 180 /\$2 /kofwin/fullscreen \$3 \, /\$2 /kofwin/position/x
 \$1 \, /\$2 /kofwin/position/y 0 \, /\$2 /kofwin/window/x 1024 \, /\$2
 /kofwin/window/y 768 \, /\$2 /kofwin/normalizedtexcoords 1;
+#X obj 516 117 r /fullscreen;
+#X obj 141 635 system;
+#X obj 598 488 ds_reg 0 /kof/\$1/pitch;
+#X obj 747 486 osc_bi 0 /kof/\$1/pitch;
+#X obj 597 508 ds_reg 0 /kof/\$1/yaw;
+#X obj 746 505 osc_bi 0 /kof/\$1/yaw;
+#X obj 161 74 vsl 15 60 -50 90 0 0 /kof/\$1/pitch /kof/\$1/pitch pitch
+0 -9 0 10 -262144 -1 -1 0 1;
+#X obj 200 72 vsl 15 60 -180 180 0 0 /kof/\$1/yaw /kof/\$1/yaw yaw
+0 -9 0 10 -262144 -1 -1 0 1;
+#X obj 408 151 pack f \$1 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
-#X connect 3 0 40 0;
-#X connect 3 1 23 0;
+#X connect 3 0 38 0;
+#X connect 3 1 22 0;
 #X connect 3 1 4 0;
-#X connect 5 0 31 0;
+#X connect 5 0 30 0;
 #X connect 6 0 7 0;
 #X connect 7 0 0 0;
-#X connect 12 0 43 0;
+#X connect 12 0 13 0;
 #X connect 13 0 14 0;
 #X connect 14 0 15 0;
-#X connect 15 0 16 0;
-#X connect 16 0 12 0;
-#X connect 17 0 21 0;
+#X connect 15 0 50 0;
+#X connect 16 0 20 0;
+#X connect 17 0 16 0;
 #X connect 18 0 17 0;
-#X connect 19 0 18 0;
-#X connect 20 0 13 0;
-#X connect 21 0 11 0;
-#X connect 22 0 17 0;
-#X connect 23 0 20 0;
-#X connect 24 0 5 0;
-#X connect 25 0 27 0;
-#X connect 26 0 25 0;
+#X connect 19 0 12 0;
+#X connect 20 0 11 0;
+#X connect 21 0 16 0;
+#X connect 22 0 19 0;
+#X connect 23 0 5 0;
+#X connect 24 0 26 0;
+#X connect 25 0 24 0;
+#X connect 26 0 27 0;
 #X connect 27 0 28 0;
-#X connect 28 0 29 0;
-#X connect 29 0 0 0;
-#X connect 31 0 0 0;
-#X connect 33 0 35 0;
+#X connect 28 0 0 0;
+#X connect 30 0 0 0;
+#X connect 32 0 43 0;
+#X connect 33 0 32 0;
 #X connect 34 0 33 0;
-#X connect 36 0 34 0;
-#X connect 37 0 36 0;
-#X connect 39 0 41 0;
-#X connect 40 0 39 0;
-#X connect 41 0 42 0;
-#X connect 42 0 37 0;
-#X connect 43 0 11 0;
-#X coords 0 -1 1 1 85 60 1 100 50;
+#X connect 35 0 34 0;
+#X connect 37 0 39 0;
+#X connect 38 0 37 0;
+#X connect 39 0 40 0;
+#X connect 40 0 35 0;
+#X connect 41 0 11 0;
+#X connect 42 0 50 2;
+#X connect 50 0 41 0;
+#X coords 0 -1 1 1 120 100 1 100 50;

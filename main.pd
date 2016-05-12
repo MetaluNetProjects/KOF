@@ -1,73 +1,345 @@
-#N canvas 579 174 700 702 10;
+#N canvas 736 75 700 755 10;
 #X declare -lib pof;
 #X declare -path ./kollabs;
 #X declare -path ./kof;
-#X obj 24 28 declare -lib pof;
-#X obj 24 48 declare -path ./kollabs;
+#X obj 19 19 declare -lib pof;
+#X obj 19 39 declare -path ./kollabs;
 #X obj 19 97 ds_logic 0;
 #X obj 19 117 ds_gui 0;
 #X text 361 251 TODO;
-#X obj 20 375 kof_media QUAD1;
+#X obj 18 344 kof_media QUAD1;
 #X obj 391 24 loadbang;
 #X msg 391 46 \; pd dsp 1;
-#X obj 19 245 ds_transition 0;
-#X obj 20 263 ds_transition_gui 0;
+#X obj 90 77 ds_transition 0;
+#X obj 19 245 ds_transition_gui 0;
 #X obj 457 22 loadbang;
-#X obj 24 68 declare -path ./kof;
+#X obj 19 59 declare -path ./kof;
 #X msg 457 46 \; /ds/0/loadfile ../presets/preset-test;
-#X obj 193 23 PdServeur \$0 424242;
-#X obj 288 615 raspi-slave \$0;
-#X obj 20 435 kof_media QUAD2;
-#X obj 19 495 kof_media QUAD3;
-#X obj 19 555 kof_media QUADPI;
-#X obj 440 375 kof_sphere SPHERE;
-#X obj 21 353 ds_scheduler 0;
-#X obj 224 97 ds_scheduler_gui 0;
-#X obj 582 104 #kof_win;
-#X obj 226 375 kof_quadmask MASK1;
-#X obj 227 435 kof_quadmask MASK2;
-#X obj 227 495 kof_quadmask MASK3;
-#X obj 227 555 kof_quadmask MASKPI;
-#X obj 226 375 kof_quadmask MASK1;
-#X obj 227 435 kof_quadmask MASK1;
-#N canvas 83 320 427 300 LyreMachine 0;
+#X obj 17 690 raspi-slave \$0;
+#X obj 438 344 kof_sphere SPHERE;
+#X obj 90 97 ds_scheduler 0;
+#X obj 205 78 ds_scheduler_gui 0;
+#X obj 575 121 #kof_win;
+#X obj 225 404 kof_quadmask MASK2;
+#X obj 225 464 kof_quadmask MASK3;
+#X obj 225 524 kof_quadmask MASKPI;
+#X obj 224 344 kof_quadmask MASK1;
+#N canvas 325 292 999 578 LyreMachine 0;
 #X obj 101 117 cnv 15 198 51 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 107 23 ds_reg 0 /kof/Lyre/x;
-#X obj 107 43 ds_reg 0 /kof/Lyre/y;
+#X obj 17 16 ds_reg 0 /kof/Lyre/x;
+#X obj 17 36 ds_reg 0 /kof/Lyre/y;
 #X obj 126 122 hsl 128 15 0 1 0 0 /kof/Lyre/x /kof/Lyre/x x -15 8 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 7232 1;
 #X obj 125 148 hsl 128 15 0 1 0 0 /kof/Lyre/y /kof/Lyre/y y -15 8 0
-10 -262144 -1 -1 6600 1;
-#X obj 101 202 r /kof/Lyre/x;
-#X obj 224 203 r /kof/Lyre/y;
-#X obj 101 250 s \$0-toclients;
-#X obj 224 251 s \$0-toclients;
-#X msg 101 227 _all_ Lyre setX \$1;
-#X msg 224 228 _all_ Lyre setY \$1;
+10 -262144 -1 -1 4798 1;
+#X obj 730 43 r /kof/Lyre/x;
+#X obj 853 44 r /kof/Lyre/y;
+#X obj 730 91 s \$0-toclients;
+#X obj 853 92 s \$0-toclients;
+#X msg 730 68 _all_ Lyre setX \$1;
+#X msg 853 69 _all_ Lyre setY \$1;
+#X floatatom 681 90 5 0 0 0 - - -, f 5;
+#X floatatom 983 105 5 0 0 0 - - -, f 5;
+#X floatatom 239 30 5 0 0 0 - - -, f 5;
+#X obj 214 47 / 720;
+#X floatatom 360 86 5 0 0 0 - - -, f 5;
+#X floatatom 350 12 5 0 0 0 - - -, f 5;
+#X obj 350 35 - 270;
+#X obj 349 59 / -180;
+#X floatatom 170 76 5 0 0 0 - - -, f 5;
+#X obj 335 149 * 720;
+#X floatatom 336 169 5 0 0 0 - - -, f 5;
+#X obj 202 74 s /kof/Lyre/x;
+#X obj 359 100 s /kof/Lyre/y;
+#X obj 336 127 r /kof/Lyre/x;
+#X obj 439 123 r /kof/Lyre/y;
+#X obj 439 144 * -180;
+#X obj 441 166 + 270;
+#X floatatom 442 189 5 0 0 0 - - -, f 5;
+#X obj 217 8 r /kof/Lyre/x/deg;
+#X obj 385 11 r /kof/Lyre/y/deg;
+#X msg 511 34 \; /kof/Lyre/x/deg \$1 \; /kof/Lyre/y/deg \$2;
+#X obj 511 14 r /kof/Lyre/xy/deg;
+#X msg 16 277 \; /kof/Lyre/xy/deg 163 194;
+#X msg 16 242 \; /kof/Lyre/xy/deg 163 165;
+#X msg 16 314 \; /kof/Lyre/xy/deg 163 235;
+#X text 78 225 3;
+#X text 216 227 A;
+#X msg 176 243 \; /kof/Lyre/xy/deg 228 170;
+#X msg 176 278 \; /kof/Lyre/xy/deg 228 202;
+#X msg 176 314 \; /kof/Lyre/xy/deg 228 238;
+#X text 377 227 1;
+#X msg 337 243 \; /kof/Lyre/xy/deg 301 168;
+#X msg 337 277 \; /kof/Lyre/xy/deg 301 189;
+#X msg 337 314 \; /kof/Lyre/xy/deg 301 230;
+#X text 534 227 B;
+#X msg 493 243 \; /kof/Lyre/xy/deg 356 168;
+#X msg 494 276 \; /kof/Lyre/xy/deg 356 189;
+#X msg 494 314 \; /kof/Lyre/xy/deg 356 226;
+#X text 692 228 2;
+#X msg 652 244 \; /kof/Lyre/xy/deg 410 166;
+#X msg 653 277 \; /kof/Lyre/xy/deg 410 202;
+#X msg 653 315 \; /kof/Lyre/xy/deg 410 234;
+#X text 851 228 C;
+#X msg 812 314 \; /kof/Lyre/xy/deg 471 234;
+#X msg 811 244 \; /kof/Lyre/xy/deg 471 169;
+#X msg 812 277 \; /kof/Lyre/xy/deg 471 193;
+#X text 294 207 Positions Lyre :;
+#N canvas 4 75 736 594 resetMasks123 0;
+#X msg 75 101 \; /kof/MASK3/corner/bottom/left/y -304 \; /kof/MASK3/corner/bottom/left/x
+-526 \; /kof/MASK3/corner/bottom/right/y -246 \; /kof/MASK3/corner/bottom/right/x
+505 \; /kof/MASK3/corner/top/right/y 340 \; /kof/MASK3/corner/top/right/x
+533 \; /kof/MASK3/corner/top/left/y 329 \; /kof/MASK3/corner/top/left/x
+-521 \; /kof/MASK3/limit/size 548 \; /kof/MASK3/state 1 \; /kof/MASK2/corner/bottom/left/y
+-400 \; /kof/MASK2/corner/bottom/left/x -508 \; /kof/MASK2/corner/bottom/right/y
+-362 \; /kof/MASK2/corner/bottom/right/x 510 \; /kof/MASK2/corner/top/right/y
+371.58 \; /kof/MASK2/corner/top/right/x 474 \; /kof/MASK2/corner/top/left/y
+377 \; /kof/MASK2/corner/top/left/x -483 \; /kof/MASK2/limit/size 571
+\; /kof/MASK2/state 1 \; /kof/MASK1/corner/bottom/left/y -283 \; /kof/MASK1/corner/bottom/left/x
+-493 \; /kof/MASK1/corner/bottom/right/y -200 \; /kof/MASK1/corner/bottom/right/x
+514 \; /kof/MASK1/corner/top/right/y 360 \; /kof/MASK1/corner/top/right/x
+503 \; /kof/MASK1/corner/top/left/y 322 \; /kof/MASK1/corner/top/left/x
+-504 \; /kof/MASK1/limit/size 573 \; /kof/MASK1/state 1;
+#X obj 75 60 inlet;
+#X msg 334 101 \; /kof/QUAD3/corner/bottom/left/y -304 \; /kof/QUAD3/corner/bottom/left/x
+-526 \; /kof/QUAD3/corner/bottom/right/y -246 \; /kof/QUAD3/corner/bottom/right/x
+505 \; /kof/QUAD3/corner/top/right/y 340 \; /kof/QUAD3/corner/top/right/x
+533 \; /kof/QUAD3/corner/top/left/y 329 \; /kof/QUAD3/corner/top/left/x
+-521 \; /kof/QUAD3/limit/size 548 \; /kof/QUAD3/state 1 \; /kof/QUAD2/corner/bottom/left/y
+-400 \; /kof/QUAD2/corner/bottom/left/x -508 \; /kof/QUAD2/corner/bottom/right/y
+-362 \; /kof/QUAD2/corner/bottom/right/x 510 \; /kof/QUAD2/corner/top/right/y
+371.58 \; /kof/QUAD2/corner/top/right/x 474 \; /kof/QUAD2/corner/top/left/y
+377 \; /kof/QUAD2/corner/top/left/x -483 \; /kof/QUAD2/limit/size 571
+\; /kof/QUAD2/state 1 \; /kof/QUAD1/corner/bottom/left/y -283 \; /kof/QUAD1/corner/bottom/left/x
+-493 \; /kof/QUAD1/corner/bottom/right/y -200 \; /kof/QUAD1/corner/bottom/right/x
+514 \; /kof/QUAD1/corner/top/right/y 360 \; /kof/QUAD1/corner/top/right/x
+503 \; /kof/QUAD1/corner/top/left/y 322 \; /kof/QUAD1/corner/top/left/x
+-504 \; /kof/QUAD1/limit/size 573 \; /kof/QUAD1/state 1;
+#X obj 334 68 inlet;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
+#X restore 253 494 pd resetMasks123;
+#X obj 253 474 bng 15 250 50 0 empty empty Masks 17 7 0 10 -262144
+-1 -1;
+#X obj 346 474 bng 15 250 50 0 empty empty Quads 17 7 0 10 -262144
+-1 -1;
+#N canvas 6 75 794 323 resetPiScreen3 0;
+#X msg 51 92 \; /kof/MASKPI/corner/bottom/left/y -226 \; /kof/MASKPI/corner/bottom/left/x
+-496 \; /kof/MASKPI/corner/bottom/right/y -186 \; /kof/MASKPI/corner/bottom/right/x
+502 \; /kof/MASKPI/corner/top/right/y 398 \; /kof/MASKPI/corner/top/right/x
+439 \; /kof/MASKPI/corner/top/left/y 389 \; /kof/MASKPI/corner/top/left/x
+-463 \; /kof/MASKPI/limit/size 609;
+#X obj 49 64 inlet;
+#X obj 320 58 inlet;
+#X msg 319 97 \; /kof/QUADPI/corner/bottom/left/y -226 \; /kof/QUADPI/corner/bottom/left/x
+-496 \; /kof/QUADPI/corner/bottom/right/y -186 \; /kof/QUADPI/corner/bottom/right/x
+502 \; /kof/QUADPI/corner/top/right/y 398 \; /kof/QUADPI/corner/top/right/x
+439 \; /kof/QUADPI/corner/top/left/y 389 \; /kof/QUADPI/corner/top/left/x
+-463 \; /kof/QUADPI/limit/size 609;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X restore 192 422 pd resetPiScreen3;
+#X obj 192 401 bng 15 250 50 0 empty empty Mask 17 7 0 10 -262144 -1
+-1;
+#X obj 291 402 bng 15 250 50 0 empty empty Quad 17 7 0 10 -262144 -1
+-1;
+#X obj 346 405 bng 15 250 50 0 empty empty Mask 17 7 0 10 -262144 -1
+-1;
+#X obj 445 405 bng 15 250 50 0 empty empty Quad 17 7 0 10 -262144 -1
+-1;
+#X obj 503 403 bng 15 250 50 0 empty empty Mask 17 7 0 10 -262144 -1
+-1;
+#X obj 602 404 bng 15 250 50 0 empty empty Quad 17 7 0 10 -262144 -1
+-1;
+#N canvas 6 75 794 323 resetPiScreen1 0;
+#X obj 49 64 inlet;
+#X obj 320 58 inlet;
+#X msg 53 90 \; /kof/MASKPI/corner/bottom/left/y -227 \; /kof/MASKPI/corner/bottom/left/x
+-524 \; /kof/MASKPI/corner/bottom/right/y -181 \; /kof/MASKPI/corner/bottom/right/x
+489 \; /kof/MASKPI/corner/top/right/y 388 \; /kof/MASKPI/corner/top/right/x
+456 \; /kof/MASKPI/corner/top/left/y 389 \; /kof/MASKPI/corner/top/left/x
+-504 \; /kof/MASKPI/limit/size 609;
+#X msg 319 97 \; /kof/QUADPI/corner/bottom/left/y -227 \; /kof/QUADPI/corner/bottom/left/x
+-524 \; /kof/QUADPI/corner/bottom/right/y -181 \; /kof/QUADPI/corner/bottom/right/x
+489 \; /kof/QUADPI/corner/top/right/y 388 \; /kof/QUADPI/corner/top/right/x
+456 \; /kof/QUADPI/corner/top/left/y 389 \; /kof/QUADPI/corner/top/left/x
+-504 \; /kof/QUADPI/limit/size 609;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X restore 346 425 pd resetPiScreen1;
+#N canvas 6 75 794 323 resetPiScreen2 0;
+#X obj 49 64 inlet;
+#X obj 320 58 inlet;
+#X msg 51 92 \; /kof/MASKPI/corner/bottom/left/y -333 \; /kof/MASKPI/corner/bottom/left/x
+-462 \; /kof/MASKPI/corner/bottom/right/y -329 \; /kof/MASKPI/corner/bottom/right/x
+516 \; /kof/MASKPI/corner/top/right/y 366 \; /kof/MASKPI/corner/top/right/x
+456 \; /kof/MASKPI/corner/top/left/y 370 \; /kof/MASKPI/corner/top/left/x
+-409 \; /kof/MASKPI/limit/size 609;
+#X msg 320 97 \; /kof/QUADPI/corner/bottom/left/y -333 \; /kof/QUADPI/corner/bottom/left/x
+-462 \; /kof/QUADPI/corner/bottom/right/y -329 \; /kof/QUADPI/corner/bottom/right/x
+516 \; /kof/QUADPI/corner/top/right/y 366 \; /kof/QUADPI/corner/top/right/x
+456 \; /kof/QUADPI/corner/top/left/y 370 \; /kof/QUADPI/corner/top/left/x
+-409 \; /kof/QUADPI/limit/size 609;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X restore 503 423 pd resetPiScreen2;
+#N canvas 4 75 636 436 tmp 0;
+#X msg 71 48 \; /kof/MASKPI/corner/bottom/left/y -226 \; /kof/MASKPI/corner/bottom/left/x
+-496 \; /kof/MASKPI/corner/bottom/right/y -186 \; /kof/MASKPI/corner/bottom/right/x
+502 \; /kof/MASKPI/corner/top/right/y 398 \; /kof/MASKPI/corner/top/right/x
+439 \; /kof/MASKPI/corner/top/left/y 389 \; /kof/MASKPI/corner/top/left/x
+-463 \; /kof/MASKPI/limit/size 609;
+#X msg 332 50 \; /kof/MASKPI/corner/bottom/left/y -227 \; /kof/MASKPI/corner/bottom/left/x
+-524 \; /kof/MASKPI/corner/bottom/right/y -181 \; /kof/MASKPI/corner/bottom/right/x
+489 \; /kof/MASKPI/corner/top/right/y 388 \; /kof/MASKPI/corner/top/right/x
+456 \; /kof/MASKPI/corner/top/left/y 389 \; /kof/MASKPI/corner/top/left/x
+-504 \; /kof/MASKPI/limit/size 609;
+#X msg 177 238 \; /kof/MASKPI/corner/bottom/left/y -333 \; /kof/MASKPI/corner/bottom/left/x
+-462 \; /kof/MASKPI/corner/bottom/right/y -329 \; /kof/MASKPI/corner/bottom/right/x
+516 \; /kof/MASKPI/corner/top/right/y 366 \; /kof/MASKPI/corner/top/right/x
+456 \; /kof/MASKPI/corner/top/left/y 370 \; /kof/MASKPI/corner/top/left/x
+-409 \; /kof/MASKPI/limit/size 609;
+#X text 73 28 MasqueLyre Sur 3;
+#X text 335 32 MasqueLyre Sur 1;
+#X text 232 221 MasqueLyre Sur 2;
+#X restore 687 127 pd tmp;
+#N canvas 40 417 990 467 positionsLyre 0;
+#X msg 16 277 \; /kof/Lyre/xy/deg 163 194;
+#X msg 16 242 \; /kof/Lyre/xy/deg 163 165;
+#X msg 16 314 \; /kof/Lyre/xy/deg 163 235;
+#X text 216 227 A;
+#X msg 176 243 \; /kof/Lyre/xy/deg 228 170;
+#X msg 176 278 \; /kof/Lyre/xy/deg 228 202;
+#X msg 176 314 \; /kof/Lyre/xy/deg 228 238;
+#X text 377 227 1;
+#X msg 337 243 \; /kof/Lyre/xy/deg 301 168;
+#X msg 337 277 \; /kof/Lyre/xy/deg 301 189;
+#X msg 337 314 \; /kof/Lyre/xy/deg 301 230;
+#X text 534 227 B;
+#X msg 493 243 \; /kof/Lyre/xy/deg 356 168;
+#X msg 494 276 \; /kof/Lyre/xy/deg 356 189;
+#X msg 494 314 \; /kof/Lyre/xy/deg 356 226;
+#X text 692 228 2;
+#X msg 652 244 \; /kof/Lyre/xy/deg 410 166;
+#X msg 653 277 \; /kof/Lyre/xy/deg 410 202;
+#X msg 653 315 \; /kof/Lyre/xy/deg 410 234;
+#X text 851 228 C;
+#X msg 812 314 \; /kof/Lyre/xy/deg 471 234;
+#X msg 811 244 \; /kof/Lyre/xy/deg 471 169;
+#X msg 812 277 \; /kof/Lyre/xy/deg 471 193;
+#X obj 403 87 bng 15 250 50 0 empty empty 3 3 -8 0 10 -262144 -1 -1
+;
+#X obj 403 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 403 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 78 225 3;
+#X obj 422 87 bng 15 250 50 0 empty empty A 3 -8 0 10 -262144 -1 -1
+;
+#X obj 422 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 422 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 441 87 bng 15 250 50 0 empty empty 1 3 -8 0 10 -262144 -1 -1
+;
+#X obj 441 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 441 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 460 87 bng 15 250 50 0 empty empty B 3 -8 0 10 -262144 -1 -1
+;
+#X obj 460 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 460 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 479 87 bng 15 250 50 0 empty empty 2 3 -8 0 10 -262144 -1 -1
+;
+#X obj 479 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 479 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 498 87 bng 15 250 50 0 empty empty C 3 -8 0 10 -262144 -1 -1
+;
+#X obj 498 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 498 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X connect 23 0 1 0;
+#X connect 24 0 0 0;
+#X connect 25 0 2 0;
+#X connect 27 0 4 0;
+#X connect 28 0 5 0;
+#X connect 29 0 6 0;
+#X connect 30 0 8 0;
+#X connect 31 0 9 0;
+#X connect 32 0 10 0;
+#X connect 33 0 12 0;
+#X connect 34 0 13 0;
+#X connect 35 0 14 0;
+#X connect 36 0 16 0;
+#X connect 37 0 17 0;
+#X connect 38 0 18 0;
+#X connect 39 0 21 0;
+#X connect 40 0 22 0;
+#X connect 41 0 20 0;
+#X coords 0 -1 1 1 115 95 1 400 50;
+#X restore 434 448 pd positionsLyre;
+#X obj 780 450 r /kof/Lyre/x/deg;
+#X obj 748 476 +;
+#X msg 749 451 360;
+#X obj 747 501 s /kof/Lyre/x/deg;
+#X floatatom 804 479 5 0 0 0 - - -, f 5;
 #X connect 5 0 9 0;
+#X connect 5 0 11 0;
 #X connect 6 0 10 0;
+#X connect 6 0 12 0;
 #X connect 9 0 7 0;
 #X connect 10 0 8 0;
+#X connect 13 0 14 0;
+#X connect 14 0 19 0;
+#X connect 14 0 22 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 15 0;
+#X connect 18 0 23 0;
+#X connect 20 0 21 0;
+#X connect 24 0 20 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 29 0 14 0;
+#X connect 30 0 17 0;
+#X connect 32 0 31 0;
+#X connect 59 0 58 0;
+#X connect 60 0 58 1;
+#X connect 62 0 61 0;
+#X connect 63 0 61 1;
+#X connect 64 0 68 0;
+#X connect 65 0 68 1;
+#X connect 66 0 69 0;
+#X connect 67 0 69 1;
+#X connect 72 0 73 1;
+#X connect 72 0 76 0;
+#X connect 73 0 75 0;
+#X connect 74 0 73 0;
 #X coords 0 -1 1 1 200 70 1 100 100;
-#X restore 441 538 pd LyreMachine;
-#X obj 20 615 pd~slave 1;
-#X obj 197 615 pd~slave 3;
-#X obj 109 615 pd~slave 2;
-#N canvas 69 162 450 300 loop 0;
+#X restore 439 507 pd LyreMachine;
+#X obj 19 584 pd~slave 1;
+#N canvas 71 158 450 300 loop 0;
 #X obj 101 37 cnv 15 98 31 empty empty empty 20 12 0 14 -204786 -66577
 0;
 #X obj 235 81 r /ds/0/timer/elapsed/raw/ms;
 #X obj 84 124 r /ds/0/scene/current;
 #X msg 84 234 0;
 #X obj 84 186 spigot;
-#X obj 109 50 tgl 15 0 empty empty loop -5 -8 0 10 -262144 -1 -1 1
+#X obj 109 50 tgl 15 0 empty empty loop -5 -8 0 10 -262144 -1 -1 0
 1;
 #X obj 84 156 sel 4;
 #X obj 84 256 s /ds/0/scene;
 #X obj 84 211 del 1000;
 #X obj 135 50 nbx 5 14 1 99 0 1 empty empty atScene 5 -8 0 10 -262144
--1 -1 4 256;
+-1 -1 72 256;
 #X connect 2 0 6 0;
 #X connect 3 0 7 0;
 #X connect 4 0 8 0;
@@ -76,47 +348,315 @@
 #X connect 8 0 3 0;
 #X connect 9 0 6 1;
 #X coords 0 -1 1 1 100 50 1 100 20;
-#X restore 540 302 pd loop;
-#N canvas 1 68 688 268 NETWORK 1;
+#X restore 522 282 pd loop;
+#N canvas 214 369 688 268 NETWORK 0;
 #X obj 50 32 r /osc/0/out;
-#X obj 50 226 s \$0-toclients;
 #X obj 50 206 list prepend _all_;
 #X obj 79 55 r /ds/0/transition/busy;
 #X obj 79 76 == 0;
 #X obj 146 89 r /ds/0/scene/current;
-#X obj 59 78 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
-;
+#X obj 95 139 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X msg 173 133 /loadpreset \$1;
 #X obj 146 111 t b f;
 #X msg 146 131 0;
 #X msg 298 149 /reloadfile;
-#X msg 168 22 1;
+#X msg 101 102 1;
 #X obj 50 160 spigot 1;
 #X obj 298 85 r /ds/0/resave;
 #X obj 298 106 b;
 #X obj 298 127 del 500;
 #X text 346 127 laisser le temps de transmettre le fichier par ssh
 ;
-#X connect 0 0 12 0;
-#X connect 2 0 1 0;
-#X connect 3 0 4 0;
-#X connect 4 0 6 0;
-#X connect 4 0 12 1;
-#X connect 5 0 8 0;
-#X connect 7 0 2 0;
-#X connect 8 0 9 0;
-#X connect 8 1 7 0;
-#X connect 9 0 12 1;
-#X connect 10 0 2 0;
-#X connect 11 0 12 1;
-#X connect 12 0 2 0;
+#X obj 211 29 r /ds/0/transition/stop;
+#X obj 405 29 r /ds/0/transition/resume;
+#X obj 51 227 s \$0-toclients;
+#X connect 0 0 11 0;
+#X connect 1 0 18 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 7 0;
+#X connect 5 0 11 1;
+#X connect 6 0 1 0;
+#X connect 7 0 8 0;
+#X connect 7 1 6 0;
+#X connect 8 0 5 0;
+#X connect 9 0 1 0;
+#X connect 10 0 5 0;
+#X connect 11 0 1 0;
+#X connect 12 0 13 0;
 #X connect 13 0 14 0;
-#X connect 14 0 15 0;
-#X connect 15 0 10 0;
+#X connect 14 0 9 0;
+#X connect 16 0 10 0;
+#X connect 17 0 8 0;
 #X restore 318 25 pd NETWORK;
-#X obj 194 59 #PdClient \$0 master;
 #X obj 605 179 pofwin;
 #X msg 605 158 0;
+#X obj 153 704 tgl 15 0 /fullscreen empty /fullscreen 17 7 0 10 -262144
+-1 -1 1 1;
+#X obj 438 583 audio_main \$0;
+#N canvas 54 106 601 263 PRESETS 1;
+#N canvas 4 99 810 565 resetMasks123 0;
+#X msg 75 101 \; /kof/MASK3/corner/bottom/left/y -304 \; /kof/MASK3/corner/bottom/left/x
+-526 \; /kof/MASK3/corner/bottom/right/y -246 \; /kof/MASK3/corner/bottom/right/x
+505 \; /kof/MASK3/corner/top/right/y 340 \; /kof/MASK3/corner/top/right/x
+533 \; /kof/MASK3/corner/top/left/y 329 \; /kof/MASK3/corner/top/left/x
+-521 \; /kof/MASK3/limit/size 548 \; /kof/MASK3/state 1 \; /kof/MASK2/corner/bottom/left/y
+-400 \; /kof/MASK2/corner/bottom/left/x -508 \; /kof/MASK2/corner/bottom/right/y
+-362 \; /kof/MASK2/corner/bottom/right/x 510 \; /kof/MASK2/corner/top/right/y
+371.58 \; /kof/MASK2/corner/top/right/x 474 \; /kof/MASK2/corner/top/left/y
+377 \; /kof/MASK2/corner/top/left/x -483 \; /kof/MASK2/limit/size 571
+\; /kof/MASK2/state 1 \; /kof/MASK1/corner/bottom/left/y -283 \; /kof/MASK1/corner/bottom/left/x
+-493 \; /kof/MASK1/corner/bottom/right/y -200 \; /kof/MASK1/corner/bottom/right/x
+514 \; /kof/MASK1/corner/top/right/y 360 \; /kof/MASK1/corner/top/right/x
+503 \; /kof/MASK1/corner/top/left/y 322 \; /kof/MASK1/corner/top/left/x
+-504 \; /kof/MASK1/limit/size 573 \; /kof/MASK1/state 1;
+#X obj 75 60 inlet;
+#X obj 334 68 inlet;
+#X msg 334 102 \; /kof/QUAD3/corner/bottom/left/y -304 \; /kof/QUAD3/corner/bottom/left/x
+-526 \; /kof/QUAD3/corner/bottom/right/y -246 \; /kof/QUAD3/corner/bottom/right/x
+505 \; /kof/QUAD3/corner/top/right/y 340 \; /kof/QUAD3/corner/top/right/x
+533 \; /kof/QUAD3/corner/top/left/y 329 \; /kof/QUAD3/corner/top/left/x
+-521 \; /kof/QUAD3/state 1 \; /kof/QUAD2/corner/bottom/left/y -400
+\; /kof/QUAD2/corner/bottom/left/x -508 \; /kof/QUAD2/corner/bottom/right/y
+-362 \; /kof/QUAD2/corner/bottom/right/x 510 \; /kof/QUAD2/corner/top/right/y
+371.58 \; /kof/QUAD2/corner/top/right/x 474 \; /kof/QUAD2/corner/top/left/y
+377 \; /kof/QUAD2/corner/top/left/x -483 \; /kof/QUAD2/state 1 \; /kof/QUAD1/corner/bottom/left/y
+-283 \; /kof/QUAD1/corner/bottom/left/x -493 \; /kof/QUAD1/corner/bottom/right/y
+-200 \; /kof/QUAD1/corner/bottom/right/x 514 \; /kof/QUAD1/corner/top/right/y
+360 \; /kof/QUAD1/corner/top/right/x 503 \; /kof/QUAD1/corner/top/left/y
+322 \; /kof/QUAD1/corner/top/left/x -504 \; /kof/QUAD1/state 1 \;;
+#X obj 604 74 inlet rot;
+#X floatatom 602 140 5 0 0 0 - - -, f 5;
+#X msg 602 167 \; /kof/1/pitch \$1;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 5 0 6 0;
+#X restore 348 142 pd resetMasks123;
+#X obj 348 122 bng 15 250 50 0 empty empty Masks 17 7 0 10 -262144
+-1 -1;
+#X obj 441 122 bng 15 250 50 0 empty empty Quads 17 7 0 10 -262144
+-1 -1;
+#N canvas 8 75 794 323 resetPiScreen3 0;
+#X msg 51 92 \; /kof/MASKPI/corner/bottom/left/y -226 \; /kof/MASKPI/corner/bottom/left/x
+-496 \; /kof/MASKPI/corner/bottom/right/y -186 \; /kof/MASKPI/corner/bottom/right/x
+502 \; /kof/MASKPI/corner/top/right/y 398 \; /kof/MASKPI/corner/top/right/x
+439 \; /kof/MASKPI/corner/top/left/y 389 \; /kof/MASKPI/corner/top/left/x
+-463 \; /kof/MASKPI/limit/size 609;
+#X obj 49 64 inlet;
+#X obj 320 58 inlet;
+#X msg 318 97 \; /kof/QUADPI/corner/bottom/left/y -226 \; /kof/QUADPI/corner/bottom/left/x
+-496 \; /kof/QUADPI/corner/bottom/right/y -186 \; /kof/QUADPI/corner/bottom/right/x
+502 \; /kof/QUADPI/corner/top/right/y 398 \; /kof/QUADPI/corner/top/right/x
+439 \; /kof/QUADPI/corner/top/left/y 389 \; /kof/QUADPI/corner/top/left/x
+-463;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X restore 34 56 pd resetPiScreen3;
+#X obj 34 35 bng 15 250 50 0 empty empty Mask 17 7 0 10 -262144 -1
+-1;
+#X obj 133 36 bng 15 250 50 0 empty empty Quad 17 7 0 10 -262144 -1
+-1;
+#X obj 188 39 bng 15 250 50 0 empty empty Mask 17 7 0 10 -262144 -1
+-1;
+#X obj 287 39 bng 15 250 50 0 empty empty Quad 17 7 0 10 -262144 -1
+-1;
+#X obj 345 37 bng 15 250 50 0 empty empty Mask 17 7 0 10 -262144 -1
+-1;
+#X obj 444 38 bng 15 250 50 0 empty empty Quad 17 7 0 10 -262144 -1
+-1;
+#N canvas 9 75 794 323 resetPiScreen1 0;
+#X obj 49 64 inlet;
+#X obj 320 58 inlet;
+#X msg 53 90 \; /kof/MASKPI/corner/bottom/left/y -227 \; /kof/MASKPI/corner/bottom/left/x
+-524 \; /kof/MASKPI/corner/bottom/right/y -181 \; /kof/MASKPI/corner/bottom/right/x
+489 \; /kof/MASKPI/corner/top/right/y 388 \; /kof/MASKPI/corner/top/right/x
+456 \; /kof/MASKPI/corner/top/left/y 389 \; /kof/MASKPI/corner/top/left/x
+-504 \; /kof/MASKPI/limit/size 609;
+#X msg 319 97 \; /kof/QUADPI/corner/bottom/left/y -227 \; /kof/QUADPI/corner/bottom/left/x
+-524 \; /kof/QUADPI/corner/bottom/right/y -181 \; /kof/QUADPI/corner/bottom/right/x
+489 \; /kof/QUADPI/corner/top/right/y 388 \; /kof/QUADPI/corner/top/right/x
+456 \; /kof/QUADPI/corner/top/left/y 389 \; /kof/QUADPI/corner/top/left/x
+-504;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X restore 188 59 pd resetPiScreen1;
+#N canvas 8 75 794 323 resetPiScreen2 0;
+#X obj 49 64 inlet;
+#X obj 320 58 inlet;
+#X msg 51 92 \; /kof/MASKPI/corner/bottom/left/y -333 \; /kof/MASKPI/corner/bottom/left/x
+-462 \; /kof/MASKPI/corner/bottom/right/y -329 \; /kof/MASKPI/corner/bottom/right/x
+516 \; /kof/MASKPI/corner/top/right/y 366 \; /kof/MASKPI/corner/top/right/x
+456 \; /kof/MASKPI/corner/top/left/y 370 \; /kof/MASKPI/corner/top/left/x
+-409 \; /kof/MASKPI/limit/size 609;
+#X msg 320 97 \; /kof/QUADPI/corner/bottom/left/y -333 \; /kof/QUADPI/corner/bottom/left/x
+-462 \; /kof/QUADPI/corner/bottom/right/y -329 \; /kof/QUADPI/corner/bottom/right/x
+516 \; /kof/QUADPI/corner/top/right/y 366 \; /kof/QUADPI/corner/top/right/x
+456 \; /kof/QUADPI/corner/top/left/y 370 \; /kof/QUADPI/corner/top/left/x
+-409;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X restore 345 57 pd resetPiScreen2;
+#N canvas 60 236 1263 520 positionsLyre 0;
+#X msg 16 277 \; /kof/Lyre/xy/deg 163 194;
+#X msg 16 242 \; /kof/Lyre/xy/deg 163 165;
+#X msg 16 314 \; /kof/Lyre/xy/deg 163 235;
+#X text 216 227 A;
+#X msg 176 243 \; /kof/Lyre/xy/deg 228 170;
+#X msg 176 278 \; /kof/Lyre/xy/deg 228 202;
+#X msg 176 314 \; /kof/Lyre/xy/deg 228 238;
+#X text 377 227 1;
+#X msg 337 243 \; /kof/Lyre/xy/deg 301 168;
+#X msg 337 277 \; /kof/Lyre/xy/deg 301 189;
+#X msg 337 314 \; /kof/Lyre/xy/deg 301 230;
+#X text 534 227 B;
+#X msg 493 243 \; /kof/Lyre/xy/deg 356 168;
+#X msg 494 276 \; /kof/Lyre/xy/deg 356 189;
+#X msg 494 314 \; /kof/Lyre/xy/deg 356 226;
+#X text 692 228 2;
+#X msg 652 244 \; /kof/Lyre/xy/deg 410 166;
+#X msg 653 277 \; /kof/Lyre/xy/deg 410 202;
+#X msg 653 315 \; /kof/Lyre/xy/deg 410 234;
+#X text 851 228 C;
+#X msg 812 314 \; /kof/Lyre/xy/deg 471 234;
+#X msg 811 244 \; /kof/Lyre/xy/deg 471 169;
+#X msg 812 277 \; /kof/Lyre/xy/deg 471 193;
+#X obj 403 87 bng 15 250 50 0 empty empty 3 3 -8 0 10 -262144 -1 -1
+;
+#X obj 403 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 403 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 78 225 3;
+#X obj 422 87 bng 15 250 50 0 empty empty A 3 -8 0 10 -262144 -1 -1
+;
+#X obj 422 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 422 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 441 87 bng 15 250 50 0 empty empty 1 3 -8 0 10 -262144 -1 -1
+;
+#X obj 441 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 441 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 460 87 bng 15 250 50 0 empty empty B 3 -8 0 10 -262144 -1 -1
+;
+#X obj 460 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 460 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 479 87 bng 15 250 50 0 empty empty 2 3 -8 0 10 -262144 -1 -1
+;
+#X obj 479 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 479 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 498 87 bng 15 250 50 0 empty empty C 3 -8 0 10 -262144 -1 -1
+;
+#X obj 498 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 498 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 519 87 bng 15 250 50 0 empty empty 3' 3 -8 0 10 -262144 -1 -1
+;
+#X obj 519 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 519 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 1029 227 3;
+#X msg 968 243 \; /kof/Lyre/xy/deg 523 165;
+#X msg 967 279 \; /kof/Lyre/xy/deg 523 194;
+#X msg 967 316 \; /kof/Lyre/xy/deg 523 235;
+#X connect 23 0 1 0;
+#X connect 24 0 0 0;
+#X connect 25 0 2 0;
+#X connect 27 0 4 0;
+#X connect 28 0 5 0;
+#X connect 29 0 6 0;
+#X connect 30 0 8 0;
+#X connect 31 0 9 0;
+#X connect 32 0 10 0;
+#X connect 33 0 12 0;
+#X connect 34 0 13 0;
+#X connect 35 0 14 0;
+#X connect 36 0 16 0;
+#X connect 37 0 17 0;
+#X connect 38 0 18 0;
+#X connect 39 0 21 0;
+#X connect 40 0 22 0;
+#X connect 41 0 20 0;
+#X connect 42 0 46 0;
+#X connect 43 0 47 0;
+#X connect 44 0 48 0;
+#X coords 0 -1 1 1 138 95 1 400 50;
+#X restore 184 87 pd positionsLyre;
+#N canvas 4 75 450 300 closeMaskLyre 0;
+#X obj 56 56 inlet;
+#X msg 56 85 \; /kof/MASKPI/corner/bottom/left/y 0 \; /kof/MASKPI/corner/bottom/left/x
+0 \; /kof/MASKPI/corner/bottom/right/y 0 \; /kof/MASKPI/corner/bottom/right/x
+0 \; /kof/MASKPI/corner/top/right/y 0 \; /kof/MASKPI/corner/top/right/x
+0 \; /kof/MASKPI/corner/top/left/y 0 \; /kof/MASKPI/corner/top/left/x
+0 \; /kof/MASKPI/limit/size 609;
+#X connect 0 0 1 0;
+#X restore 59 152 pd closeMaskLyre;
+#X obj 61 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 71 16 Rideau;
+#X text 218 17 Porte;
+#X text 385 18 Mur;
+#X obj 381 176 r /kof/Lyre/x/deg;
+#X obj 350 202 +;
+#X msg 350 177 360;
+#X obj 350 227 s /kof/Lyre/x/deg;
+#X floatatom 405 205 5 0 0 0 - - -, f 5;
+#X obj 497 200 * 720;
+#X floatatom 498 220 5 0 0 0 - - -, f 5;
+#X obj 498 178 r /kof/Lyre/x;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 6 0 10 0;
+#X connect 7 0 10 1;
+#X connect 8 0 11 0;
+#X connect 9 0 11 1;
+#X connect 14 0 13 0;
+#X connect 18 0 19 1;
+#X connect 18 0 22 0;
+#X connect 19 0 21 0;
+#X connect 20 0 19 0;
+#X connect 23 0 24 0;
+#X connect 25 0 23 0;
+#X restore 533 242 pd PRESETS;
+#X obj 18 404 kof_media QUAD2;
+#X obj 17 464 kof_media QUAD3;
+#X obj 17 524 kof_media QUADPI;
+#X obj 587 691 loadbang;
+#X obj 276 584 pd~slave 3;
+#X obj 148 584 pd~slave 2;
+#X obj 441 706 tgl 40 0 /kof/spheremode /kof/spheremode /kof/spheremode
+0 -8 0 10 -257985 -1 -1 0 1;
+#X obj 485 730 ds_reg 0 /kof/spheremode nomorph;
+#X obj 544 85 PdClient NET master;
+#X obj 178 23 PdServeur \$0 424242;
+#X msg 287 696 \; /kof/yaw 0 \; /kof/pitch 0;
+#N canvas 4 541 450 300 mnsec 1;
+#X floatatom 122 50 5 0 0 0 - - -, f 5;
+#X obj 122 80 mod 60;
+#X obj 71 82 div 60;
+#X floatatom 65 105 5 0 0 0 - - -, f 5;
+#X floatatom 121 109 5 0 0 0 - - -, f 5;
+#X obj 108 17 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 154 17 354.25;
+#X connect 0 0 1 0;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X restore 547 28 pd mnsec;
 #X connect 6 0 7 0;
 #X connect 10 0 12 0;
-#X connect 36 0 35 0;
+#X connect 27 0 26 0;

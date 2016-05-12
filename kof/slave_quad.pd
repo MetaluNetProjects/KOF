@@ -1,4 +1,4 @@
-#N canvas 97 378 1155 606 10;
+#N canvas 98 266 1155 606 10;
 #X declare -path ../kollabs -lib pof;
 #X obj 83 -22 pofhead;
 #X obj 106 22 s /pofhead/slave;
@@ -22,7 +22,7 @@
 #X obj 328 371 vsl 15 60 -50 90 0 0 /kof/\$1/pitch /kof/\$1/pitch pitch
 -10 -9 0 10 -262144 -1 -1 0 0;
 #X obj 374 371 vsl 15 60 -180 180 0 0 /kof/\$1/yaw /kof/\$1/yaw yaw
--10 -9 0 10 -262144 -1 -1 0 0;
+-10 -9 0 10 -262144 -1 -1 2950 0;
 #X text 332 320 base;
 #X text 327 338 rotation;
 #X obj 378 279 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -87,6 +87,9 @@
 #X obj 460 124 t b b b;
 #X obj 460 203 del 500;
 #X obj 460 224 list prepend \$1;
+#X obj 595 16 osc_r \$2 /kof/pitch;
+#X obj 594 35 osc_r \$2 /kof/yaw;
+#X obj 593 54 osc_r \$2 /kof/spheremode;
 #X connect 0 0 44 0;
 #X connect 2 0 24 0;
 #X connect 3 0 2 1;
